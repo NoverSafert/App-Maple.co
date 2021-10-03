@@ -80,10 +80,10 @@ struct MovieDetailView: View {
                         WebView(html: movie.sRecorrido)
                             .frame(height: 500)
                         
-                        Button("Fullscreen"){
+                        /*Button("Fullscreen"){
                             self.isPresented.toggle()
                         }
-                        .fullScreenCover(isPresented: $isPresented, content: FullScreenModalView() -> movie.sRecorrido )
+                        .fullScreenCover(isPresented: $isPresented, content: FullScreenModalView() -> movie.sRecorrido )*/
                     }
                     
                 }//Vstack

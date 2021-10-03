@@ -24,7 +24,7 @@ struct MainView: View {
         navBarApperance.titleTextAttributes = [.foregroundColor:
             UIColor.black]
         navBarApperance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
-        navBarApperance.backgroundColor = UIColor(Color("ColorRosa"))
+        navBarApperance.backgroundColor = UIColor(Color("ColorDeFondo"))
         navBarApperance.shadowColor = .clear
         UINavigationBar.appearance().compactAppearance = navBarApperance
         UINavigationBar.appearance().scrollEdgeAppearance = navBarApperance
@@ -101,7 +101,8 @@ struct MainView: View {
 
                 
                 NavigationView{
-                    AccountView(nombre: $nombre)
+                    LoginView()
+                    //AccountView(nombre: $nombre)
                 }
                 .tabItem{
                     let menuText = Text("Account", comment: "Account")

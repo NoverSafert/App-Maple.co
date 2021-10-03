@@ -90,7 +90,7 @@ struct HomeView: View {
             .toolbar(content: {
                 ToolbarItem(placement: .principal, content: {
                     HStack{
-                        Image("logo")
+                        Image("LogoMarco")
                             .resizable()
                             .scaledToFill()
                             .frame(height: 40)

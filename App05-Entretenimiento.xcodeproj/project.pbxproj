@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A27CE0E270A6C1B009E6A8B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A27CE0D270A6C1B009E6A8B /* LoginViewModel.swift */; };
+		5A27CE15270A6CA6009E6A8B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A27CE14270A6CA6009E6A8B /* LoginView.swift */; };
+		5A27CE1E270A6F25009E6A8B /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A27CE1D270A6F25009E6A8B /* WebServices.swift */; };
 		5A7D012B26E84F0900ECCB72 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7D012A26E84F0900ECCB72 /* NotificationView.swift */; };
 		5A9F12F926DF390E0055ED81 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9F12F826DF390E0055ED81 /* HomeView.swift */; };
 		5ABECE4426E848A700F562E9 /* MediaModel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABECE4326E848A600F562E9 /* MediaModel1.swift */; };
@@ -32,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A27CE0D270A6C1B009E6A8B /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		5A27CE14270A6CA6009E6A8B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		5A27CE1D270A6F25009E6A8B /* WebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
 		5A7D012A26E84F0900ECCB72 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		5A9F12F826DF390E0055ED81 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5ABECE4326E848A600F562E9 /* MediaModel1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaModel1.swift; sourceTree = "<group>"; };
@@ -69,6 +75,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A27CE13270A6C72009E6A8B /* VIewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5A27CE0D270A6C1B009E6A8B /* LoginViewModel.swift */,
+			);
+			path = VIewModels;
+			sourceTree = "<group>";
+		};
+		5A27CE20270A6F32009E6A8B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5A27CE1D270A6F25009E6A8B /* WebServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		FB2AB9A426DD499E007B0AD3 = {
 			isa = PBXGroup;
 			children = (
@@ -92,9 +114,11 @@
 				FBA66A2126E143420020CC24 /* Models */,
 				FBA66A0426E135540020CC24 /* Extensions.swift */,
 				FBA66A0D26E135B50020CC24 /* NavAppereanceModifier.swift */,
+				5A27CE13270A6C72009E6A8B /* VIewModels */,
 				FBA66A0126E135480020CC24 /* Enumerators.swift */,
 				FB2AB9B026DD499E007B0AD3 /* App05_EntretenimientoApp.swift */,
 				FBA66A0726E135600020CC24 /* Media.swift */,
+				5A27CE20270A6F32009E6A8B /* Services */,
 				5ABECE4726E848F800F562E9 /* Media1.swift */,
 				FB2AB9B426DD49A0007B0AD3 /* Assets.xcassets */,
 				FB2AB9B926DD49A0007B0AD3 /* Info.plist */,
@@ -127,10 +151,11 @@
 				5A7D012A26E84F0900ECCB72 /* NotificationView.swift */,
 				5A9F12F826DF390E0055ED81 /* HomeView.swift */,
 				5ACB0FF426E052DB007F4622 /* MoviesView.swift */,
-				FBA66A1626E13BB50020CC24 /* MovieDetailView.swift */,
 				FBA66A1026E1376F0020CC24 /* MovieCellView.swift */,
 				FBA66A2526E1451B0020CC24 /* SeriesView.swift */,
 				FBA66A1326E1389A0020CC24 /* MediaRowView.swift */,
+				FBA66A1626E13BB50020CC24 /* MovieDetailView.swift */,
+				5A27CE14270A6CA6009E6A8B /* LoginView.swift */,
 				FBA66A1A26E140360020CC24 /* VideoWebView.swift */,
 				FBA66A1926E140360020CC24 /* VideoPlayerView.swift */,
 				FBA66A1B26E140360020CC24 /* WebView.swift */,
@@ -209,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBA66A0926E135600020CC24 /* Media.swift in Sources */,
+				5A27CE1E270A6F25009E6A8B /* WebServices.swift in Sources */,
 				FBA66A2626E1451B0020CC24 /* SeriesView.swift in Sources */,
 				FB2AB9B326DD499E007B0AD3 /* MainView.swift in Sources */,
 				FBA66A5726E682880020CC24 /* AccountView.swift in Sources */,
@@ -216,6 +242,7 @@
 				5ACB0FF526E052DB007F4622 /* MoviesView.swift in Sources */,
 				FBA66A1126E1376F0020CC24 /* MovieCellView.swift in Sources */,
 				5A9F12F926DF390E0055ED81 /* HomeView.swift in Sources */,
+				5A27CE15270A6CA6009E6A8B /* LoginView.swift in Sources */,
 				FBA66A0E26E135B50020CC24 /* NavAppereanceModifier.swift in Sources */,
 				FBA66A1E26E140360020CC24 /* WebView.swift in Sources */,
 				FBA66A1726E13BB50020CC24 /* MovieDetailView.swift in Sources */,
@@ -228,6 +255,7 @@
 				FBA66A1C26E140360020CC24 /* VideoPlayerView.swift in Sources */,
 				FBA66A0A26E135600020CC24 /* MediaModel.swift in Sources */,
 				5A7D012B26E84F0900ECCB72 /* NotificationView.swift in Sources */,
+				5A27CE0E270A6C1B009E6A8B /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
