@@ -11,25 +11,35 @@ struct LoginView: View {
     
     @StateObject private var loginVM = LoginViewModel()
     
+    @State var showSignUp : Bool = false
+    
     var body: some View {
         ZStack{
             Color("ColorDeFondo")
             VStack{
                 Image("LogoMarco")
-                Form{
-                    TextField("Username", text: $loginVM.username)
-                    SecureField("Password", text: $loginVM.password)
-                    
-                    HStack{
-                        Spacer()
-                        Button("Login"){
-                            loginVM.login()
-                        }
-                        Spacer()
-                    }
-                }
-                
-                //WebView(html: "http://201.151.0.167:10001/")
+                VStack{
+                            TextField("username", text:$loginVM.username)
+                            SecureField("username", text:$loginVM.password)
+                            
+                            Button(action: {
+                                
+                                loginVM.login()
+                                
+                            }, label: {
+                                Text("Login")
+                            })
+                            
+                            Button(action: {
+                                showSignUp.toggle()
+                                
+                            }, label: {
+                                Text("SignUP")
+                            })
+                            .sheet(isPresented: $showSignUp, content: {
+                                SignUpView()
+                            })
+                        }//Vstack
             }//Vstack
         }//Zstack
         

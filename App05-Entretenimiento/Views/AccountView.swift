@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AccountView: View {
     @Binding var nombre: String
+    @EnvironmentObject var loginVM : LoginViewModel
     
     var body: some View {
         VStack{
@@ -23,6 +24,12 @@ struct AccountView: View {
             Form{
                 TextField("Nombre", text: $nombre)
             }
+            Button(action: {
+                            loginVM.logout()
+                            
+                        }, label: {
+                            Text("Sing out")
+                        })
         }
             .navigationBarTitle("Account")
     }
