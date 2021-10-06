@@ -26,12 +26,12 @@ struct CarouselView: View {
                     // Inicio del carrusel de imagenes
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack(spacing: 50){ // spacing: 50
-                            ForEach(0..<media.arrObras.count){ expo in
+                            ForEach(media.arrObras){ expo in
                                 GeometryReader{ proxy in
                                     let scale = getScale(proxy: proxy)
                                     NavigationLink(destination: Text("Destino"), label: {
                                         VStack(spacing: 1){
-                                            Image(media.arrObras[expo].arrImages[0])
+                                            Image(expo.arrImages[0])
                                                 .resizable()
                                                 .scaledToFit()
                                                 .frame(width: 300) // 150
@@ -45,7 +45,7 @@ struct CarouselView: View {
                                                 //.scaleEffect(CGSize(width: scale, height: scale))
                                                 .animation(.easeOut(duration: 0.5))
                                         
-                                            Text("Autor de la obra")
+                                            Text(expo.sName)
                                                 .padding(.top)
                                                 .multilineTextAlignment(.center)
                                                 .foregroundColor(.black)
