@@ -17,9 +17,19 @@ struct HomeView: View {
                 CarouselView()
             } // VStack
             .padding()
-            Text("Descripcion Marco")
-                .multilineTextAlignment(.center)
-                .font(.title2)
+            ZStack{
+                Color("ColorRosa")
+                    Image("ImagenHomeMarco")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200, height: 200)
+                        .offset(x: -100.0, y: /*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
+                
+                Text("MARCO, es un centro cultural de arte contemporáneo internacional, ubicado en la ciudad de Monterrey.")
+                    .offset(x: 100.0, y: /*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
+                    .multilineTextAlignment(.center)
+                    .font(.title2)
+            }//ZStack
         } // ScrollView
         .navigationBarTitleDisplayMode(.inline)
         .navigationAppearance(backgroundColor: UIColor(Color("ColorRosa")), foregroundColor: .black)

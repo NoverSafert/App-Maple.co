@@ -14,6 +14,7 @@ struct LoginView: View {
     @State var showSignUp : Bool = false
     
     var body: some View {
+        
         ZStack{
             Color("ColorDeFondo")
             VStack{
@@ -42,7 +43,16 @@ struct LoginView: View {
                         }//Vstack
             }//Vstack
         }//Zstack
-        
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationAppearance(backgroundColor: UIColor(Color("ColorRosa")), foregroundColor: .black)
+        .blendMode(.sourceAtop)
+        .toolbar(content: {
+            ToolbarItem(placement: .principal, content: {
+                Text("MARCO")
+                    .foregroundColor(.black)
+                    .font(.title)
+            }) // ToolBarItem Content
+        }) // ToolBar Content
         
     }
 }

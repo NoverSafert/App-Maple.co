@@ -35,14 +35,16 @@ struct MoviesView: View {
                     
             } //Vstack
             .navigationBarTitleDisplayMode(.inline)
+            .navigationAppearance(backgroundColor: UIColor(Color("ColorRosa")), foregroundColor: .black)
             .blendMode(.sourceAtop)
             .toolbar(content: {
                 ToolbarItem(placement: .principal, content: {
-                    Text("Exposiciones")
+                    Text("MARCO")
                         .foregroundColor(.black)
                         .font(.title)
-                })
-            })
+                }) // ToolBarItem Content
+            }) // ToolBar Content
+            
         }//Zstack
     }
 }
