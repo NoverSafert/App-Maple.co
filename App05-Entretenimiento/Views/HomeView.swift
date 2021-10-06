@@ -16,6 +16,10 @@ struct HomeView: View {
                     .multilineTextAlignment(.center)
                 CarouselView()
             } // VStack
+            .padding()
+            Text("Descripcion Marco")
+                .multilineTextAlignment(.center)
+                .font(.title2)
         } // ScrollView
         .navigationBarTitleDisplayMode(.inline)
         .navigationAppearance(backgroundColor: UIColor(Color("ColorRosa")), foregroundColor: .black)

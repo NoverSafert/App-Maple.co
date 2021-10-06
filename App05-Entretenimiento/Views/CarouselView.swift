@@ -23,10 +23,9 @@ struct CarouselView: View {
     var body: some View {
             //NavigationView{
                 ScrollView{
-                    
                     // Inicio del carrusel de imagenes
                     ScrollView(.horizontal, showsIndicators: false){
-                        HStack(spacing: 50){
+                        HStack(spacing: 50){ // spacing: 50
                             ForEach(0..<media.arrObras.count){ expo in
                                 GeometryReader{ proxy in
                                     let scale = getScale(proxy: proxy)
@@ -34,8 +33,8 @@ struct CarouselView: View {
                                         VStack(spacing: 1){
                                             Image(media.arrObras[expo].arrImages[0])
                                                 .resizable()
-                                                .scaledToFill()
-                                                .frame(width: 150)
+                                                .scaledToFit()
+                                                .frame(width: 300) // 150
                                                 .overlay(
                                                     RoundedRectangle(cornerRadius: 5)
                                                         .stroke(lineWidth: 0.5)
@@ -55,7 +54,7 @@ struct CarouselView: View {
                                     .scaleEffect(.init(width: scale, height: scale))
                                     
                                 }// GeometryReader
-                                .frame(width: 125, height: 300) // Tarjetas verticales
+                                .frame(width: 300, height: 250) // Tarjetas verticales
                                 //.frame(width: 300, height: 125) // Tarjetas horizontales (ajustar el spacing del HStack)
                             } // ForEach
                         } // HStack
