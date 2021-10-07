@@ -14,7 +14,7 @@ struct HomeView: View {
                 Text("Exposiciones")
                     .padding()
                     .multilineTextAlignment(.center)
-                CarouselView()
+                ExpositionsCarousel()
             } // VStack
             .padding()
             ZStack{
@@ -31,6 +31,8 @@ struct HomeView: View {
                     .font(.title2)
             }//ZStack
         } // ScrollView
+        
+        
         .navigationBarTitleDisplayMode(.inline)
         .navigationAppearance(backgroundColor: UIColor(Color("ColorRosa")), foregroundColor: .black)
         .blendMode(.sourceAtop)
@@ -48,7 +50,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-            .environmentObject(MediaModel())
-            .environmentObject(MediaModel1())
+            .environmentObject(ExpositionModel())
     }
 }

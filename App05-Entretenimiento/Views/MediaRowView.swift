@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MediaRowView: View {
-    let media : Media
+    let media : Exposition
     
     var body: some View {
         VStack{
@@ -47,6 +47,6 @@ struct MediaRowView: View {
 
 struct MediaRowView_Previews: PreviewProvider {
     static var previews: some View {
-        MediaRowView(media: Media.defaultMedia)
+        MediaRowView(media: Exposition.defaultMedia)
     }
 }

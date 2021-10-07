@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct Media: Identifiable{
+struct Exposition: Identifiable{
     
     var id = UUID()
     var sName: String
     var sDescription: String
-    var sCuraduria: String
+    var sCuraduria: String // Autor
     var sMuseografia: String
     var sSalas: String
     var sTecnicas: String

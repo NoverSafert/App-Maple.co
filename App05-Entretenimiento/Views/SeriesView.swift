@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SeriesView: View {
-    @EnvironmentObject private var media : MediaModel
+    @EnvironmentObject private var media : ExpositionModel
         
         var body: some View {
             ZStack{
@@ -21,7 +21,7 @@ struct SeriesView: View {
                     
                     ScrollView(.vertical, showsIndicators: false){
                         VStack{
-                            ForEach( media.arrMovies){ serie in
+                            ForEach( media.expositions){ serie in
                                 NavigationLink(destination: MovieDetailView(movie: serie), // Cambiar nombre de función
                                                label: {
                                                 MediaRowView(media: serie)

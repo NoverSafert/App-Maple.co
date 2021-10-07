@@ -25,7 +25,7 @@ struct FullScreenModalView: View {
 }
 
 struct MovieDetailView: View {
-    let movie: Media
+    let movie: Exposition
     
     @State private var isPresented = false
     
@@ -96,6 +96,6 @@ struct MovieDetailView: View {
 
 struct MovieDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetailView(movie: Media.defaultMedia)
+        MovieDetailView(movie: Exposition.defaultMedia)
     }
 }

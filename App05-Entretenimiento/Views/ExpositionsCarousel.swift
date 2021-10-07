@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct CarouselView: View {
-    @EnvironmentObject private var media : MediaModel1
+struct ExpositionsCarousel: View {
+    @EnvironmentObject private var media : ExpositionModel
     
     private func getScale(proxy: GeometryProxy) -> CGFloat {
         var scale: CGFloat = 1
@@ -26,10 +26,10 @@ struct CarouselView: View {
                     // Inicio del carrusel de imagenes
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack(spacing: 50){ // spacing: 50
-                            ForEach(media.arrObras){ expo in
+                            ForEach(media.expositions){ expo in
                                 GeometryReader{ proxy in
                                     let scale = getScale(proxy: proxy)
-                                    NavigationLink(destination: Text("Destino"), label: {
+                                    NavigationLink(destination: ImagesCarousel(images: expo.arrImages), label: {
                                         VStack(spacing: 1){
                                             Image(expo.arrImages[0])
                                                 .resizable()
@@ -68,7 +68,7 @@ struct CarouselView: View {
 
 struct CarouselView_Previews: PreviewProvider {
     static var previews: some View {
-        CarouselView()
-            .environmentObject(MediaModel1())
+        ExpositionsCarousel()
+            .environmentObject(ExpositionModel())
     }
 }

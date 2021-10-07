@@ -9,15 +9,13 @@ import SwiftUI
 
 @main
 struct App05_EntretenimientoApp: App {
-    @StateObject var media1 = MediaModel1()
-    @StateObject var media = MediaModel()
+    @StateObject var media = ExpositionModel()
     @StateObject var loginVM = LoginViewModel()
     
     var body: some Scene {
         WindowGroup {
             MainView()
                 .environmentObject(media)
-                .environmentObject(media1)
                 .environmentObject(loginVM)
         }
     }

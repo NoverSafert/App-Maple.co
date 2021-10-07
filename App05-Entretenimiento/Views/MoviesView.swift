@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MoviesView: View {
-    @EnvironmentObject private var media : MediaModel
+    @EnvironmentObject private var media : ExpositionModel
     
     var body: some View {
         ZStack{
@@ -21,10 +21,10 @@ struct MoviesView: View {
                 
                 ScrollView(.vertical, showsIndicators: false){
                     VStack{
-                        ForEach( media.arrMovies){ movie in
-                            NavigationLink(destination: MovieDetailView(movie: movie),
+                        ForEach(media.expositions){ expo in
+                            NavigationLink(destination: MovieDetailView(movie: expo),
                                            label: {
-                                            MediaRowView(media: movie)
+                                            MediaRowView(media: expo)
                                            })
                         }
                     }//Vstack
@@ -52,6 +52,6 @@ struct MoviesView: View {
 struct MoviesView_Previews: PreviewProvider {
     static var previews: some View {
         MoviesView()
-            .environmentObject(MediaModel())
+            .environmentObject(ExpositionModel())
     }
 }

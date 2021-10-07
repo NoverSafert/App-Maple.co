@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MovieCellView: View {
     
-    let movie: Media
+    let movie: Exposition
     
     var body: some View {
             Image(movie.arrImages[1])
@@ -22,6 +22,6 @@ struct MovieCellView: View {
 
 struct MovieCellView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieCellView(movie: Media.defaultMedia)
+        MovieCellView(movie: Exposition.defaultMedia)
     }
 }
