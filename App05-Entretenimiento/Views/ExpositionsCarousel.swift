@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ExpositionsCarousel: View {
-    @EnvironmentObject private var media : ExpositionModel
+    @EnvironmentObject private var media : MarColection
     
     private func getScale(proxy: GeometryProxy) -> CGFloat {
         var scale: CGFloat = 1
@@ -69,6 +69,6 @@ struct ExpositionsCarousel: View {
 struct CarouselView_Previews: PreviewProvider {
     static var previews: some View {
         ExpositionsCarousel()
-            .environmentObject(ExpositionModel())
+            .environmentObject(MarColection())
     }
 }

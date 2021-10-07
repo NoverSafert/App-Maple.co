@@ -11,12 +11,14 @@ import SwiftUI
 struct App05_EntretenimientoApp: App {
     @StateObject var media = ExpositionModel()
     @StateObject var loginVM = LoginViewModel()
+    @StateObject var MarColect = MarColection()
     
     var body: some Scene {
         WindowGroup {
             MainView()
                 .environmentObject(media)
                 .environmentObject(loginVM)
+                .environmentObject(MarColect)
         }
     }
 }
