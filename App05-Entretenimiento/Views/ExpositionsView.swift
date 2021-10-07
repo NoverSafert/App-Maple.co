@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MoviesView: View {
+struct ExpositionsView: View {
     @EnvironmentObject private var media : ExpositionModel
     
     var body: some View {
@@ -22,7 +22,7 @@ struct MoviesView: View {
                 ScrollView(.vertical, showsIndicators: false){
                     VStack{
                         ForEach(media.expositions){ expo in
-                            NavigationLink(destination: MovieDetailView(movie: expo),
+                            NavigationLink(destination: ExpositionDetailView(exposition: expo),
                                            label: {
                                             MediaRowView(media: expo)
                                            })
@@ -39,7 +39,7 @@ struct MoviesView: View {
             .blendMode(.sourceAtop)
             .toolbar(content: {
                 ToolbarItem(placement: .principal, content: {
-                    Text("MARCO")
+                    Text("MARC❏")
                         .foregroundColor(.black)
                         .font(.title)
                 }) // ToolBarItem Content
@@ -49,9 +49,9 @@ struct MoviesView: View {
     }
 }
 
-struct MoviesView_Previews: PreviewProvider {
+struct ExpositionsView_Previews: PreviewProvider {
     static var previews: some View {
-        MoviesView()
+        ExpositionsView()
             .environmentObject(ExpositionModel())
     }
 }

@@ -7,25 +7,25 @@
 
 import SwiftUI
 
-struct FullScreenModalView: View {
+struct FullScreenModalView: View { // 1
     let recorrido: String
     @Environment(\.presentationMode) var presentationMode
     
-    var body: some View {
-        VStack{
+    var body: some View { // 2
+        VStack{ // 3
             WebView(html: recorrido)
-        }
+        } // 3
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("ColorDeFondo"))
         .edgesIgnoringSafeArea(.all)
-        .onTapGesture{
+        .onTapGesture{ // 4
             presentationMode.wrappedValue.dismiss()
-        }
-    }
-}
+        } // 4
+    } // 2
+} //1
 
-struct MovieDetailView: View {
-    let movie: Exposition
+struct ExpositionDetailView: View {
+    let exposition: Exposition
     
     @State private var isPresented = false
     
@@ -39,14 +39,14 @@ struct MovieDetailView: View {
                         //logo de expo
                             VStack{
                                 
-                                Image(movie.arrImages[0])
+                                Image(exposition.arrImages[0])
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: 200)
-                                Text(movie.sName)
+                                Text(exposition.sName)
                                     .font(.headline)
                                     .foregroundColor(Color("ColorRosa"))
-                                Text("\(String(movie.sSalas))")
+                                Text("\(String(exposition.sSalas))")
                                     .font(.caption)
                             }//Vstack
                     }//Zstack
@@ -54,30 +54,31 @@ struct MovieDetailView: View {
                         ZStack{
                             Color("ColorRosa")
                                 .cornerRadius(10)
-                            Text(movie.sDescription)
+                            Text(exposition.sDescription)
                                 .multilineTextAlignment(.center)
                                 .padding()
                         }
                     }
                     
                     TabView{
-                        ForEach(movie.arrImages, id:\.self){ image in
-                            Image(image)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 200)
-                                .clipShape(Rectangle())
-                        }
+                        ImagesCarousel(images: exposition.arrImages)
+                        //ForEach(movie.arrImages, id:\.self){ image in
+                            //Image(image)
+                            //    .resizable()
+                           //     .scaledToFit()
+                          //      .frame(height: 200)
+                         //       .clipShape(Rectangle())
+                        //}
                     }
                     .tabViewStyle(PageTabViewStyle())
-                    if(movie.boolVideo == true){
-                        VideoWebView(url: movie.sVideo)
+                    if(exposition.boolVideo){
+                        VideoWebView(url: exposition.sVideo)
                             .frame(height: 400)
                     }
                     
-                    if(movie.boolRecorrido == true){
+                    if(exposition.boolRecorrido){
                         
-                        WebView(html: movie.sRecorrido)
+                        WebView(html: exposition.sRecorrido)
                             .frame(height: 500)
                         
                         /*Button("Fullscreen"){
@@ -94,8 +95,8 @@ struct MovieDetailView: View {
     }
 }
 
-struct MovieDetailView_Previews: PreviewProvider {
+struct ExpositionDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetailView(movie: Exposition.defaultMedia)
+        ExpositionDetailView(exposition: Exposition.defaultMedia)
     }
 }

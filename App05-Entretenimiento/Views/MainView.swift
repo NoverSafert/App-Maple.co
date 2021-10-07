@@ -76,7 +76,7 @@ struct MainView: View {
                 .tag(Tab.notificaciones)
             
             NavigationView{
-                MoviesView()
+                ExpositionsView()
             }
                 .tabItem{
                     let menuText = Text("Exposiciones", comment: "Exposiciones")
