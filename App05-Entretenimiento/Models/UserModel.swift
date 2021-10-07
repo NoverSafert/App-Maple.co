@@ -2,7 +2,7 @@
 //  UserModel.swift
 //  App05-Entretenimiento
 //
-//  Created by user194236 on 10/3/21.
+//  Created by Team 4 on 10/3/21.
 //
 
 import Foundation

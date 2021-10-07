@@ -2,7 +2,7 @@
 //  Media.swift
 //  App04-Peliculas
 //
-//  Created by Elvia Rosas on 16/03/21.
+//  Created by Team 4 on 16/03/21.
 //
 
 import SwiftUI

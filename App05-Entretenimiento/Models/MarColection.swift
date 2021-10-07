@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class ExpositionModel: ObservableObject {
+class MarColection: ObservableObject {
     @Published var expositions = [Exposition]()
     init() {
         LoadInfo()
