@@ -31,11 +31,19 @@ struct MainView: View {
         UINavigationBar.appearance().tintColor = UIColor(.black)
         
         let tabBarAppearance = UITabBarAppearance()
-        
+        let tabBar = UITabBar()
         //Barra de abajo
-        tabBarAppearance.backgroundColor = UIColor(Color("ColorTerracota"))
         UITabBar.appearance().standardAppearance = tabBarAppearance
-        tabBarAppearance.backgroundEffect = blur(radius: 100, opaque: true) as? UIBlurEffect
+        tabBar.isTranslucent = true
+        tabBar.backgroundImage = UIImage()
+        tabBar.shadowImage = UIImage()
+        tabBar.barTintColor = .clear
+        tabBar.layer.backgroundColor = UIColor.clear.cgColor
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = tabBar.bounds
+        blurView.autoresizingMask = .flexibleWidth
+        tabBar.insertSubview(blurView, at: 0)
     
     }
     
@@ -120,6 +128,20 @@ struct MainView: View {
         }
             
 
+    }
+}
+struct BlurView: UIViewRepresentable{
+    func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
+        //
+    }
+    
+    let style: UIBlurEffect.Style
+    
+    func makeUIView(context: Context) -> UIVisualEffectView{
+        let view = UIVisualEffectView(
+        effect: UIBlurEffect(style: style)
+        )
+        return view
     }
 }
 
