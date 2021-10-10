@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var showDetails = false
+    @State var isPresenting = false
     var body: some View{
         ScrollView{
             VStack{
@@ -18,11 +19,15 @@ struct HomeView: View {
                 ExpositionsCarousel()
             } // VStack
             .padding()
+            NavigationLink(destination: InfoMarcoView()){
+                    Text("+ Conoce más")
+            }.buttonStyle(PlainButtonStyle())
             ZStack{
                 Color("ColorRosa")
                 Button(action: {
-                    print("Enviado")
-                    }, label: {
+                    isPresenting = true
+                    
+                }, label: {
                         Text("+ Conoce más")
                             .padding()
                             .background(Color.green)
@@ -48,7 +53,10 @@ struct HomeView: View {
                 
             }
             .frame(height: 270.0)
+            //NavigationLink( destination: InfoMarcoView(),
+                //isActive: $isPresenting)
             //ZStack
+            
         } // ScrollView
         
         
@@ -66,7 +74,6 @@ struct HomeView: View {
 
     } // Body
 }
-
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
