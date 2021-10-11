@@ -19,7 +19,7 @@ struct HomeView: View {
                 ExpositionsCarousel()
             } // VStack  
             .padding()
-            NavigationLink(destination: InfoMarcoView()){
+            NavigationLink(destination: InfoMarcoFinalView()){
                     Text("+ Conoce más")
             }.buttonStyle(PlainButtonStyle())
             ZStack{
