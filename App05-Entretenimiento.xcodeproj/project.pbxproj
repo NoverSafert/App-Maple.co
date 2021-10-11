@@ -195,6 +195,8 @@
 			dependencies = (
 			);
 			name = "App05-Entretenimiento";
+			packageProductDependencies = (
+			);
 			productName = "App05-Entretenimiento";
 			productReference = FB2AB9AD26DD499E007B0AD3 /* App05-Entretenimiento.app */;
 			productType = "com.apple.product-type.application";
@@ -222,6 +224,8 @@
 				Base,
 			);
 			mainGroup = FB2AB9A426DD499E007B0AD3;
+			packageReferences = (
+			);
 			productRefGroup = FB2AB9AE26DD499E007B0AD3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

@@ -12,7 +12,6 @@ struct App05_EntretenimientoApp: App {
     @StateObject var media = ExpositionModel()
     @StateObject var loginVM = LoginViewModel()
     @StateObject var MarColect = MarColectionModel()
-    
     var body: some Scene {
         WindowGroup {
             MainView()
