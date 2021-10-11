@@ -25,7 +25,9 @@ class ExpositionModel: ObservableObject {
                           boolVideo: false,
                           sVideo: "",
                           boolRecorrido: true,
-                          sRecorrido: "https://www.patiomarco.360s.mx/"
+                          sRecorrido: "https://www.patiomarco.360s.mx/",
+                          isMarcolection: false,
+                          colection: MarColection(sizes: "", technique: "", year: 0)
                             )
         expositions.append(expo)
             
@@ -40,8 +42,9 @@ class ExpositionModel: ObservableObject {
                           boolVideo: true,
                           sVideo: "https://youtu.be/swhrA3qoqx4",
                           boolRecorrido: true,
-                          sRecorrido: "https://www.museomarco.360s.mx/"
-                            )
+                          sRecorrido: "https://www.museomarco.360s.mx/",
+                          isMarcolection: false,
+                          colection: MarColection(sizes: "", technique: "", year: 0)                            )
         expositions.append(expo)
     }
 }
