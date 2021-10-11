@@ -108,6 +108,6 @@ struct InfoMarcoView: View {
 struct InfoMarcoView_Previews: PreviewProvider {
     static var previews: some View {
         ExpositionsCarousel()
-            .environmentObject(MarColection())
+            .environmentObject(MarColectionModel())
     }
 }
