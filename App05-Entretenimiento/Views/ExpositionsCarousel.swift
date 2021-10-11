@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ExpositionsCarousel: View {
-    @EnvironmentObject private var media : MarColection
+    @EnvironmentObject private var media : MarColectionModel
+    @State private var showPopUp: Bool = false
+    @State private var selected: Exposition = MarColectionModel.init().expositions[0] //Exposition.defaultMedia
     
     private func getScale(proxy: GeometryProxy) -> CGFloat {
         var scale: CGFloat = 1
@@ -29,7 +31,12 @@ struct ExpositionsCarousel: View {
                             ForEach(media.expositions){ expo in
                                 GeometryReader{ proxy in
                                     let scale = getScale(proxy: proxy)
-                                    NavigationLink(destination: ImagesCarousel(images: expo.arrImages), label: {
+                                    Button(action:{
+                                        self.selected = expo
+                                        withAnimation{
+                                            self.showPopUp.toggle()
+                                        }
+                                    }, label: {
                                         VStack(spacing: 1){
                                             Image(expo.arrImages[0])
                                                 .resizable()
@@ -42,17 +49,37 @@ struct ExpositionsCarousel: View {
                                                 .cornerRadius(5)
                                                 .shadow(radius: 5)
                                                 .clipped()
-                                                //.scaleEffect(CGSize(width: scale, height: scale))
                                                 .animation(.easeOut(duration: 0.5))
-                                        
                                             Text(expo.sName)
                                                 .padding(.top)
                                                 .multilineTextAlignment(.center)
                                                 .foregroundColor(.black)
                                         } // VStack
-                                    }) // NavigationLink
+                                    }) // Button
+                                    .sheet(isPresented: $showPopUp, content: {
+                                        VStack{
+                                            Text("Autor de la obra: \(selected.sCuraduria)")
+                                                .fontWeight(.medium)
+                                                .multilineTextAlignment(.leading)
+                                                .padding()
+                                            Text("Medidas de la obra: \(selected.colection.sizes)")
+                                                .fontWeight(.medium)
+                                                .multilineTextAlignment(.leading)
+                                                .padding()
+                                            Text("Tecnicas utilizadas en la obra: \(selected.colection.technique)")
+                                                .fontWeight(.medium)
+                                                .multilineTextAlignment(.leading)
+                                                .padding()
+                                            Text("Fecha de exposicion: \(selected.colection.year)")
+                                                .fontWeight(.medium)
+                                                .multilineTextAlignment(.leading)
+                                                .padding()
+                                            Button(action: {self.showPopUp.toggle()}, label: {
+                                                Image(systemName: "arrow.down.circle.fill")
+                                            })
+                                        } // VStack
+                                    }) // sheet-content
                                     .scaleEffect(.init(width: scale, height: scale))
-                                    
                                 }// GeometryReader
                                 .frame(width: 300, height: 250) // Tarjetas verticales
                                 //.frame(width: 300, height: 125) // Tarjetas horizontales (ajustar el spacing del HStack)
@@ -69,6 +96,6 @@ struct ExpositionsCarousel: View {
 struct CarouselView_Previews: PreviewProvider {
     static var previews: some View {
         ExpositionsCarousel()
-            .environmentObject(MarColection())
+            .environmentObject(MarColectionModel())
     }
 }
