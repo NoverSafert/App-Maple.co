@@ -19,25 +19,16 @@ struct HomeView: View {
                 ExpositionsCarousel()
             } // VStack  
             .padding()
-            NavigationLink(destination: InfoMarcoFinalView()){
-                    Text("+ Conoce más")
-            }.buttonStyle(PlainButtonStyle())
             ZStack{
                 Color("ColorRosa")
-                Button(action: {
-                    isPresenting = true
-                    
-                }, label: {
+                NavigationLink(
+                    destination: InfoMarcoFinalView(),
+                    label: {
                         Text("+ Conoce más")
                             .padding()
-                            .background(Color.green)
-                            .foregroundColor(Color.white)
-                            //.cornerRadius(10)
-                            //.offset(x: -100, y: 100)
-                        
+                            .background(Color(.green))
+                            .foregroundColor(.white)
                     })
-                .padding(.top, 200.0)
-                .padding(.leading, -170.0)
                     Image("ImagenHomeMarco")
                         .resizable()
                         //.scaledToFit()

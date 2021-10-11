@@ -10,7 +10,8 @@ import SwiftUI
 struct InfoMarcoView: View {
     
     var body: some View {
-        ScrollView{
+        VStack(spacing: 0){
+        //ScrollView{
             ZStack{
             Image("InfoMarco2")
                 .resizable()
@@ -48,6 +49,7 @@ struct InfoMarcoView: View {
                     .frame(width: 420.0, height: 300.0)
                 }
                 .frame(width: 420, height: 300.0)
+            VStack{
             ZStack{
                 Color("ColorRosa")
                 VStack{
@@ -58,6 +60,8 @@ struct InfoMarcoView: View {
                         .foregroundColor(.white)
                 }
             }
+            }
+            .frame(width: 420.0, height: 300.0)
             ZStack{
             Image("InfoMarco3")
                 .resizable()
@@ -79,11 +83,13 @@ struct InfoMarcoView: View {
             }
         .background(Color("ColorDeFondo"))
     }
+    }
 }
-}
+
 
 struct InfoMarco2View: View{
     var body: some View{
+        VStack(spacing: 0.0){
         ZStack{
             Color("ColorAmarillo")
                         VStack{
@@ -113,14 +119,17 @@ struct InfoMarco2View: View{
                                 .padding()
                         }
                     }
+        }
     }
 }
 
 struct InfoMarcoFinalView: View {
     var body: some View{
         VStack(){
-        InfoMarcoView()
-        InfoMarco2View()
+            ScrollView{
+                InfoMarcoView()
+                InfoMarco2View()
+            }
         }
     }
 }
