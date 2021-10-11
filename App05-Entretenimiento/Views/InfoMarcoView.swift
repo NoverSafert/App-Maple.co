@@ -11,6 +11,12 @@ struct InfoMarcoView: View {
     
     var body: some View {
         ScrollView{
+            ZStack{
+            Image("InfoMarco2")
+                .resizable()
+                .frame(width: 420.0, height: 300.0)
+            }
+            .frame(width: 420, height: 300.0)
             VStack{
                 Text("Mision")
                     .fontWeight(.bold)
@@ -37,6 +43,12 @@ struct InfoMarcoView: View {
                 }
             }
             ZStack{
+                Image("InfoMarco1")
+                    .resizable()
+                    .frame(width: 420.0, height: 300.0)
+                }
+                .frame(width: 420, height: 300.0)
+            ZStack{
                 Color("ColorRosa")
                 VStack{
                     Text("La Paloma de Juan Soriano")
@@ -46,6 +58,12 @@ struct InfoMarcoView: View {
                         .foregroundColor(.white)
                 }
             }
+            ZStack{
+            Image("InfoMarco3")
+                .resizable()
+                .frame(width: 420.0, height: 300.0)
+            }
+            .frame(width: 420, height: 300.0)
             ZStack{
                 Color(.white)
                 VStack{
@@ -59,49 +77,51 @@ struct InfoMarcoView: View {
                     .font(.system(size: 30))
                 }
             }
-            ZStack{
-                Color("ColorRosa")
-                VStack{
-                Text("16MIL")
-                    .fontWeight(.bold)
-                    .font(.system(size: 40))
-                Text("METROS CUADRADOS DE CONSTRUCCIÓN")
-                    .fontWeight(.bold)
-                    .font(.system(size: 30))
-                    .foregroundColor(Color.white)
-                }
-            }
-            ZStack{
-                Color("ColorAmarillo")
-                VStack{
-                Text("5MIL")
-                    .fontWeight(.bold)
-                    .foregroundColor(Color("ColorAzul"))
-                    .font(.system(size: 40))
-                Text("METROS CUADRADOS DE EXHIBICIÓN EN 11 SALAS")
-                    .fontWeight(.bold)
-                    .font(.system(size: 30))
-                }
-            }
-            ZStack{
-                Color("ColorMorado")
-            ScrollView{
-                    Text("MARCO se distingue por su belleza, creada por el arquitecto mexicano reconocido internacionalmente Ricardo Legorreta, famoso por la aplicación moderna a los temas nacionales. Legorreta crea diferentes ambientes y atmósferas en cada rincón, provocando que la visita al Museo sea una experiencia única.")
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .padding()
-                    Text("Para Legorreta, el valor arquitectónico de MARCO va más allá de las formas al presentar un planteamiento que puede parecer contrario a las tendencias actuales de la museografía. Él crea un edificio que corresponde no sólo al lugar urbano y a Monterrey, sino a todo el pueblo mexicano, mostrando el arte en un ambiente mucho más natural y menos artificial que como se hace en otras partes del mundo.")
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .padding()
-                    Text("Las obras se presentan combinando adecuada y equilibradamente la luz natural y la artificial, así, la visita al Museo no es como el recorrer un laboratorio donde hay obras de arte, sino una visita a una serie de espacios y elementos arquitectónicos que resultan una obra de arte en sí mismos.")
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .padding()
-                }
-            }
-        }
         .background(Color("ColorDeFondo"))
+    }
+}
+}
+
+struct InfoMarco2View: View{
+    var body: some View{
+        ZStack{
+            Color("ColorAmarillo")
+                        VStack{
+                        Text("5MIL")
+                            .fontWeight(.bold)
+                            .foregroundColor(Color("ColorAzul"))
+                            .font(.system(size: 40))
+                        Text("METROS CUADRADOS DE EXHIBICIÓN EN 11 SALAS")
+                            .fontWeight(.bold)
+                            .font(.system(size: 30))
+                        }
+                    }
+                    ZStack{
+                        Color("ColorMorado")
+                    ScrollView{
+                            Text("MARCO se distingue por su belleza, creada por el arquitecto mexicano reconocido internacionalmente Ricardo Legorreta, famoso por la aplicación moderna a los temas nacionales. Legorreta crea diferentes ambientes y atmósferas en cada rincón, provocando que la visita al Museo sea una experiencia única.")
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding()
+                            Text("Para Legorreta, el valor arquitectónico de MARCO va más allá de las formas al presentar un planteamiento que puede parecer contrario a las tendencias actuales de la museografía. Él crea un edificio que corresponde no sólo al lugar urbano y a Monterrey, sino a todo el pueblo mexicano, mostrando el arte en un ambiente mucho más natural y menos artificial que como se hace en otras partes del mundo.")
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding()
+                            Text("Las obras se presentan combinando adecuada y equilibradamente la luz natural y la artificial, así, la visita al Museo no es como el recorrer un laboratorio donde hay obras de arte, sino una visita a una serie de espacios y elementos arquitectónicos que resultan una obra de arte en sí mismos.")
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding()
+                        }
+                    }
+    }
+}
+
+struct InfoMarcoFinalView: View {
+    var body: some View{
+        VStack(){
+        InfoMarcoView()
+        InfoMarco2View()
+        }
     }
 }
 
@@ -111,3 +131,4 @@ struct InfoMarcoView_Previews: PreviewProvider {
             .environmentObject(MarColectionModel())
     }
 }
+

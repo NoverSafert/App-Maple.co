@@ -17,9 +17,9 @@ struct HomeView: View {
                     .padding()
                     .multilineTextAlignment(.center)
                 ExpositionsCarousel()
-            } // VStack
+            } // VStack  
             .padding()
-            NavigationLink(destination: InfoMarcoView()){
+            NavigationLink(destination: InfoMarcoFinalView()){
                     Text("+ Conoce más")
             }.buttonStyle(PlainButtonStyle())
             ZStack{
