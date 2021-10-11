@@ -22,6 +22,6 @@ struct Exposition: Identifiable{
     var sVideo: String
     var boolRecorrido: Bool
     var sRecorrido: String
-    
+    var isMarcolection: Bool
+    var colection: MarColection
 }
-
