@@ -7,9 +7,10 @@
 
 import SwiftUI
 
+
 struct ExpositionsCarousel: View {
     @EnvironmentObject private var media : MarColectionModel
-    @State private var showPopUp: Bool = false
+    @State var showPopUp: Bool = false
     @State private var selected: Exposition = MarColectionModel.init().expositions[0] //Exposition.defaultMedia
     
     private func getScale(proxy: GeometryProxy) -> CGFloat {
@@ -56,28 +57,43 @@ struct ExpositionsCarousel: View {
                                                 .foregroundColor(.black)
                                         } // VStack
                                     }) // Button
+                                    
                                     .sheet(isPresented: $showPopUp, content: {
-                                        VStack{
-                                            Text("Autor de la obra: \(selected.sCuraduria)")
-                                                .fontWeight(.medium)
-                                                .multilineTextAlignment(.leading)
-                                                .padding()
-                                            Text("Medidas de la obra: \(selected.colection.sizes)")
-                                                .fontWeight(.medium)
-                                                .multilineTextAlignment(.leading)
-                                                .padding()
-                                            Text("Tecnicas utilizadas en la obra: \(selected.colection.technique)")
-                                                .fontWeight(.medium)
-                                                .multilineTextAlignment(.leading)
-                                                .padding()
-                                            Text("Fecha de exposicion: \(selected.colection.year)")
-                                                .fontWeight(.medium)
-                                                .multilineTextAlignment(.leading)
-                                                .padding()
-                                            Button(action: {self.showPopUp.toggle()}, label: {
-                                                Image(systemName: "arrow.down.circle.fill")
-                                            })
-                                        } // VStack
+                                        SheetView(show: self.$showPopUp, expo: self.selected)
+                                        
+                                        //ZStack{
+                                        //    Color("ColorRosa")
+                                        //    VStack{
+                                        //        Text(selected.sName)
+                                        //            .fontWeight(.bold)
+                                        //            .multilineTextAlignment(.center)
+                                        //            .padding(.top)
+
+
+                                        //        Text("Autor de la obra: \(selected.sCuraduria)")
+                                        //            .fontWeight(.medium)
+                                        //            .multilineTextAlignment(.leading)
+                                        //            .padding()
+                                        //       Text("Medidas de la obra: \(selected.colection.sizes)")
+                                        //            .fontWeight(.medium)
+                                        //            .multilineTextAlignment(.leading)
+                                        //            .padding()
+                                        //        Text("Tecnicas utilizadas en la obra: \(selected.colection.technique)")
+                                        //            .fontWeight(.medium)
+                                        //            .multilineTextAlignment(.leading)
+                                        //            .padding()
+                                        //        Text("Fecha de exposicion: \(selected.colection.year)")
+                                        //            .fontWeight(.medium)
+                                        //            .multilineTextAlignment(.leading)
+                                        //            .padding()
+                                        //        Button(action: {self.showPopUp.toggle()}, label: {
+                                        //            Image(systemName: "arrow.down.circle.fill")
+                                        //        })
+                                        //        Spacer()
+                                        //    } // VStack
+                                        //} // ZStack
+                                        
+                                        
                                     }) // sheet-content
                                     .scaleEffect(.init(width: scale, height: scale))
                                 }// GeometryReader

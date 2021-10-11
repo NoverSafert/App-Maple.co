@@ -30,7 +30,6 @@ struct ExpositionDetailView: View {
     @State private var isPresented = false
     
     var body: some View {  
-        
         ZStack{
             Color("ColorDeFondo")
             ScrollView{
