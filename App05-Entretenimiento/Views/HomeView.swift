@@ -17,7 +17,7 @@ struct HomeView: View {
                     .padding()
                     .multilineTextAlignment(.center)
                 ExpositionsCarousel()
-            } // VStack
+            } // VStack  
             .padding()
             NavigationLink(destination: InfoMarcoView()){
                     Text("+ Conoce más")
