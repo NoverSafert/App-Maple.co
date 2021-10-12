@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import HalfASheet
 
 struct ExpositionsCarousel: View {
     @EnvironmentObject private var media : MarColectionModel
@@ -27,7 +28,7 @@ struct ExpositionsCarousel: View {
                 ScrollView{
                     // Inicio del carrusel de imagenes
                     ScrollView(.horizontal, showsIndicators: false){
-                        HStack(spacing: 50){ // spacing: 50
+                        HStack(spacing: 30){ // spacing: 50
                             ForEach(media.expositions){ expo in
                                 GeometryReader{ proxy in
                                     let scale = getScale(proxy: proxy)
@@ -41,7 +42,7 @@ struct ExpositionsCarousel: View {
                                             Image(expo.arrImages[0])
                                                 .resizable()
                                                 .scaledToFit()
-                                                .frame(width: 300) // 150
+                                                .frame(width: 280) // 150
                                                 .overlay(
                                                     RoundedRectangle(cornerRadius: 5)
                                                         .stroke(lineWidth: 0.5)
@@ -59,12 +60,9 @@ struct ExpositionsCarousel: View {
                                     .sheet(isPresented: $showPopUp, content: {
                                         SheetView(show: self.$showPopUp, expo: self.selected)
                                     }) // sheet-content
-                                    
-                                    
                                     .scaleEffect(.init(width: scale, height: scale))
                                 }// GeometryReader
-                                .frame(width: 300, height: 250) // Tarjetas verticales
-                                //.frame(width: 300, height: 125) // Tarjetas horizontales (ajustar el spacing del HStack)
+                                .frame(width: 280, height: 230) // Tarjetas verticales
                             } // ForEach
                         } // HStack
                         .padding(30)

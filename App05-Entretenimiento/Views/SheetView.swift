@@ -36,6 +36,7 @@ struct SheetView: View {
                 .navigationBarTitle(Text(expo.sName), displayMode: .inline)
                 .navigationBarItems(trailing: Button(action: {self.show.toggle()}, label: {
                     Image(systemName: "xmark.circle")
+                        .foregroundColor(.white)
                 }))
         } // NavView
     }
