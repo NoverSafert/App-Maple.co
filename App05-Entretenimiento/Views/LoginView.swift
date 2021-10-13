@@ -48,9 +48,11 @@ struct LoginView: View {
         .blendMode(.sourceAtop)
         .toolbar(content: {
             ToolbarItem(placement: .principal, content: {
-                Text("MARCO")
-                    .foregroundColor(.black)
-                    .font(.title)
+                //Text("MARC▢")
+                //    .foregroundColor(.black)
+                 //   .font(.title)
+                Image("MarcoLogoBlanco").resizable()
+                    .frame(width: 150, height:100)
             }) // ToolBarItem Content
         }) // ToolBar Content
         

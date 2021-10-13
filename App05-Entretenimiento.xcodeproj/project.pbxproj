@@ -16,6 +16,12 @@
 		5A7D012B26E84F0900ECCB72 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7D012A26E84F0900ECCB72 /* NotificationView.swift */; };
 		5A9F12F926DF390E0055ED81 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9F12F826DF390E0055ED81 /* HomeView.swift */; };
 		5ACB0FF526E052DB007F4622 /* ExpositionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACB0FF426E052DB007F4622 /* ExpositionsView.swift */; };
+		ABEA5198271740E800E84834 /* ReservarVGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA5197271740E800E84834 /* ReservarVGView.swift */; };
+		ABEA519B2717410100E84834 /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA519A2717410100E84834 /* ReservationView.swift */; };
+		ABEA519F2717411A00E84834 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABEA519D2717411A00E84834 /* Model.xcdatamodeld */; };
+		ABEA51A22717414800E84834 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA51A12717414800E84834 /* Persistence.swift */; };
+		ABEA51A52717416800E84834 /* Reservacion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA51A42717416800E84834 /* Reservacion+CoreDataProperties.swift */; };
+		ABEA51A82717417100E84834 /* Reservacion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA51A72717417100E84834 /* Reservacion+CoreDataClass.swift */; };
 		ABFD223527134DE200A07529 /* InfoMarcoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFD223427134DE200A07529 /* InfoMarcoView.swift */; };
 		C55E528327149DA2006EF31B /* MarColectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55E528227149DA2006EF31B /* MarColectionModel.swift */; };
 		C55E52862714A60E006EF31B /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55E52852714A60E006EF31B /* SheetView.swift */; };
@@ -50,6 +56,12 @@
 		5A7D012A26E84F0900ECCB72 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		5A9F12F826DF390E0055ED81 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5ACB0FF426E052DB007F4622 /* ExpositionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpositionsView.swift; sourceTree = "<group>"; };
+		ABEA5197271740E800E84834 /* ReservarVGView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservarVGView.swift; sourceTree = "<group>"; };
+		ABEA519A2717410100E84834 /* ReservationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
+		ABEA519E2717411A00E84834 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		ABEA51A12717414800E84834 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		ABEA51A42717416800E84834 /* Reservacion+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reservacion+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		ABEA51A72717417100E84834 /* Reservacion+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reservacion+CoreDataClass.swift"; sourceTree = "<group>"; };
 		ABFD223427134DE200A07529 /* InfoMarcoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoMarcoView.swift; sourceTree = "<group>"; };
 		C55E528227149DA2006EF31B /* MarColectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarColectionModel.swift; sourceTree = "<group>"; };
 		C55E52852714A60E006EF31B /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
@@ -128,8 +140,12 @@
 				5A27CE13270A6C72009E6A8B /* VIewModels */,
 				5A27CE20270A6F32009E6A8B /* Services */,
 				FB2AB9B026DD499E007B0AD3 /* App05_EntretenimientoApp.swift */,
+				ABEA519D2717411A00E84834 /* Model.xcdatamodeld */,
 				FBA66A0D26E135B50020CC24 /* NavAppereanceModifier.swift */,
+				ABEA51A72717417100E84834 /* Reservacion+CoreDataClass.swift */,
+				ABEA51A42717416800E84834 /* Reservacion+CoreDataProperties.swift */,
 				FBA66A0126E135480020CC24 /* Enumerators.swift */,
+				ABEA51A12717414800E84834 /* Persistence.swift */,
 				FBA66A0426E135540020CC24 /* Extensions.swift */,
 				FB2AB9B926DD49A0007B0AD3 /* Info.plist */,
 				FB2AB9B426DD49A0007B0AD3 /* Assets.xcassets */,
@@ -168,6 +184,8 @@
 				ABFD223427134DE200A07529 /* InfoMarcoView.swift */,
 				FBA66A1326E1389A0020CC24 /* MediaRowView.swift */,
 				FBA66A1626E13BB50020CC24 /* ExpositionDetailView.swift */,
+				ABEA519A2717410100E84834 /* ReservationView.swift */,
+				ABEA5197271740E800E84834 /* ReservarVGView.swift */,
 				FBA66A1A26E140360020CC24 /* VideoWebView.swift */,
 				FBA66A1926E140360020CC24 /* VideoPlayerView.swift */,
 				FBA66A1B26E140360020CC24 /* WebView.swift */,
@@ -259,10 +277,12 @@
 				FBA66A0926E135600020CC24 /* Exposition.swift in Sources */,
 				5A5810B7270A7CB2001EDC9E /* UsersViewModel.swift in Sources */,
 				5A27CE1E270A6F25009E6A8B /* WebServices.swift in Sources */,
+				ABEA51A82717417100E84834 /* Reservacion+CoreDataClass.swift in Sources */,
 				FB2AB9B326DD499E007B0AD3 /* MainView.swift in Sources */,
 				5A27CE25270A78EE009E6A8B /* SignUpView.swift in Sources */,
 				FBA66A5726E682880020CC24 /* AccountView.swift in Sources */,
 				5ACB0FF526E052DB007F4622 /* ExpositionsView.swift in Sources */,
+				ABEA519B2717410100E84834 /* ReservationView.swift in Sources */,
 				5A5810B4270A7C57001EDC9E /* UserModel.swift in Sources */,
 				5A9F12F926DF390E0055ED81 /* HomeView.swift in Sources */,
 				ABFD223527134DE200A07529 /* InfoMarcoView.swift in Sources */,
@@ -272,13 +292,17 @@
 				FBA66A0E26E135B50020CC24 /* NavAppereanceModifier.swift in Sources */,
 				FBA66A1E26E140360020CC24 /* WebView.swift in Sources */,
 				FBA66A1726E13BB50020CC24 /* ExpositionDetailView.swift in Sources */,
+				ABEA51A22717414800E84834 /* Persistence.swift in Sources */,
 				FB2AB9B126DD499E007B0AD3 /* App05_EntretenimientoApp.swift in Sources */,
 				FBA66A1426E1389A0020CC24 /* MediaRowView.swift in Sources */,
 				FBA66A1D26E140360020CC24 /* VideoWebView.swift in Sources */,
+				ABEA519F2717411A00E84834 /* Model.xcdatamodeld in Sources */,
 				C55E528327149DA2006EF31B /* MarColectionModel.swift in Sources */,
 				FBA66A0526E135540020CC24 /* Extensions.swift in Sources */,
 				FBA66A0226E135480020CC24 /* Enumerators.swift in Sources */,
 				C55E52862714A60E006EF31B /* SheetView.swift in Sources */,
+				ABEA51A52717416800E84834 /* Reservacion+CoreDataProperties.swift in Sources */,
+				ABEA5198271740E800E84834 /* ReservarVGView.swift in Sources */,
 				FBA66A1C26E140360020CC24 /* VideoPlayerView.swift in Sources */,
 				FBA66A0A26E135600020CC24 /* ExpositionModel.swift in Sources */,
 				5A7D012B26E84F0900ECCB72 /* NotificationView.swift in Sources */,
@@ -489,6 +513,19 @@
 			productName = HalfASheet;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		ABEA519D2717411A00E84834 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ABEA519E2717411A00E84834 /* Model.xcdatamodel */,
+			);
+			currentVersion = ABEA519E2717411A00E84834 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FB2AB9A526DD499E007B0AD3 /* Project object */;
 }

@@ -90,7 +90,15 @@ struct ExpositionDetailView: View {
             .padding()
             }
         }
-        
+        .toolbar(content: {
+            ToolbarItem(placement: .principal, content: {
+                //Text("MARC▢")
+                //    .foregroundColor(.black)
+                 //   .font(.title)
+                Image("MarcoLogoBlanco").resizable()
+                    .frame(width: 150, height:100)
+            }) // ToolBarItem Content
+        }) // ToolBar Content
     }
 }
 

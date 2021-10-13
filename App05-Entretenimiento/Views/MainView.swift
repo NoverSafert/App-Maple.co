@@ -96,7 +96,9 @@ struct MainView: View {
                 }
                 .tag(Tab.exposiciones)
             
-                Text("Reservaciones")
+                NavigationView{
+                    ReservationView()
+                }
                     .tabItem{
                         let menuText = Text("Reservaciones", comment: "calendar")
                         Label{
