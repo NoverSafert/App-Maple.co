@@ -15,12 +15,17 @@ struct HomeView: View {
             VStack{
                 Text("Colección Marco")
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(Color("ColorRosa2"))
                     .font(.system(size: 30))
                     .padding()
                     .multilineTextAlignment(.center)
                 ExpositionsCarousel()
             } // VStack  
             .padding()
+            Text("Acerca de nosotros")
+                .fontWeight(.bold)
+                .foregroundColor(Color("ColorRosa2"))
+                .font(.system(size: 30))
             ZStack{
                 Color("ColorAmarillo")
                 Image("ImagenHomeMarco")
@@ -49,10 +54,34 @@ struct HomeView: View {
                 
             }
             .frame(height: 270.0)
-            //NavigationLink( destination: InfoMarcoView(),
-                //isActive: $isPresenting)
-            //ZStack
-            
+            Text("Calendario de actividades")
+                .fontWeight(.bold)
+                .foregroundColor(Color("ColorRosa2"))
+                .font(.system(size: 30))
+            ZStack{
+                Color("ColorMorado")
+                Image("EventoMarco")
+                    .resizable()
+                    //.scaledToFit()
+                    .frame(width: 200, height: 170)
+                    .cornerRadius(10)
+                    .offset(x: 100.0, y: -30)
+                ZStack{
+                    Link("+ Conoce más", destination: URL(string: "https://www.marco.org.mx/events")!)
+                        .padding()
+                        .font(.system(size: 17))
+                        .foregroundColor(.black)
+                        .background(Color("ColorAmarillo"))
+                }
+                .padding(.top, 200.0)
+                .padding(.leading, 190.0)
+                Text("¿Quieres asistir a uno de nuestros eventos que tenemos mensualmente? Da clic en conoce más!")
+                    .frame(width: 195, alignment: .center)
+                    .foregroundColor(.white)
+                    .offset(x: -106.0, y: 0.0)
+                    .font(.title2)
+            }
+            .frame(height: 270.0)
         } // ScrollView
         
         
