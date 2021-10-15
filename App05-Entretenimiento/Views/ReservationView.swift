@@ -9,10 +9,14 @@ import SwiftUI
 
 struct ReservationView: View {
     var body: some View {
+        
         ZStack {
             Color("ColorDeFondo")
                 .ignoresSafeArea()
+            ScrollView{
             VStack{
+                Spacer()
+                    .frame(height: 80)
                 NavigationLink(destination: ReservarVGView()){
                     Text("Reservar visita guiada")
                         .font(.system(size: 20))
@@ -25,31 +29,41 @@ struct ReservationView: View {
                 }
                 Spacer()
                     .frame(height: 80)
-                Button(action: {
-                    print("boton")
-                }) {
-                    Text("Boletos de Marco")
+                Link("Boletos", destination: URL(string: "https://www.marco.org.mx/compra-general/")!)
                         .font(.system(size: 20))
                         .frame(width: 170, height: 50, alignment: .center)
                         .foregroundColor(.black)
                         .padding(30)
                         .background(Color("ColorRosa"))
                         .cornerRadius(30)
-                }
                 Spacer()
                     .frame(height: 80)
-                Button(action: {
-                    print("boton")
-                }) {
-                    Text("Restaurante")
+                Link("Restaurante", destination: URL(string: "https://www.marco.org.mx/wp-content/uploads/2021/07/menu-restaurante1.pdf")!)
                         .font(.system(size: 20))
                         .frame(width: 170, height: 50, alignment: .center)
                         .foregroundColor(.black)
                         .padding(30)
                         .background(Color("ColorRosa"))
                         .cornerRadius(30)
+                Spacer()
+                    .frame(height: 80)
+                HStack{
+                    VStack{
+                        Text("Restaurante abierdo de martes a sabado")
+                        Text("1:00 a 4:00 pm")
+                    }
+                    .frame(width: 170)
+                    VStack{
+                        Text("RESERVACIONES")
+                        Text("T. +52 (81) 8262.4562, 63 y 64" )
+                        Text("eventos@marco.org.mx")
+                        Text("DIRECCIÓN")
+                        Text("Zuazua y Jardón S/N, Centro. Monterrey, N.L., México. 64000")
+                    }
+                    .frame(width: 200)
                 }
             }//VStack
+        }
             .navigationBarTitleDisplayMode(.inline)
             .blendMode(.sourceAtop)
             .toolbar(content: {

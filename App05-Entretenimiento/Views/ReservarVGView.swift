@@ -9,7 +9,10 @@ import SwiftUI
 
 struct ReservarVGView: View {
     
+    
+    
     @Environment(\.managedObjectContext) var viewContext
+    @Environment(\.presentationMode) var presentationMode
     
     @State var tituloReservacion = ""
     @State var usuario = ""
@@ -20,7 +23,6 @@ struct ReservarVGView: View {
     var body: some View {
             
             NavigationView{
-                ZStack{
                     Form{
                         Section(header: Text("Detalle Reserva")){
                             TextField("Titulo", text: $tituloReservacion)
@@ -30,22 +32,26 @@ struct ReservarVGView: View {
                                     Text("\($0)")
                                 }
                             }
-                        }
+                        }//Boton1
+                        
                         Section(header: Text("Horarios")){
                             DatePicker("Fecha", selection: $fecha,
                                        in: Date()...,
                                        displayedComponents: .date)
                             DatePicker("Hora", selection: $hora,
                                        displayedComponents: .hourAndMinute)
-                        }
+                        }//Boton2
                         
-                        Button(action: guardarDatos){
+                        Button(action: {
+                                guardarDatos()
+                            self.presentationMode.wrappedValue.dismiss()
+                        }){
                             Text("Guardar Reserva")
-                        }
+                        }//Boton3
                         
-                    }
-                }
-            }
+                    }//Form
+                    .background(Color("ColorDeFondo"))
+            }//NavigationView
             .navigationBarTitleDisplayMode(.inline)
             .navigationAppearance(backgroundColor: UIColor(Color("ColorRosa")), foregroundColor: .black)
             .blendMode(.sourceAtop)
@@ -74,6 +80,10 @@ struct ReservarVGView: View {
             } catch {
                 print(error.localizedDescription)
             }
+        }
+    
+        init(){
+            UITableView.appearance().backgroundColor = .clear
         }
     
     }
