@@ -30,7 +30,19 @@ struct SheetView: View {
                     .fontWeight(.medium)
                     .multilineTextAlignment(.leading)
                     .padding()
-                Spacer()
+                Image(expo.images[1])
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 280) // 150
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 5)
+                            .stroke(lineWidth: 0.5)
+                    )
+                    .cornerRadius(5)
+                    .shadow(radius: 5)
+                    .clipped()
+                    //.scaleEffect(CGSize(width: scale, height: scale))
+                    .animation(.easeOut(duration: 0.5))
             } // VStack
 
                 .navigationBarTitle(Text(expo.name), displayMode: .inline)
