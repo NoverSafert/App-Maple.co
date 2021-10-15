@@ -21,7 +21,7 @@ struct NotificationView: View {
     var fetchedItems: FetchedResults<Reservacion>
     
     var body: some View {
-            NavigationView{
+            //NavigationView{
                 List{
                     ForEach(fetchedItems, id:\.self){item in
                         /*
@@ -34,7 +34,7 @@ struct NotificationView: View {
                     }//for
                 }//List
                 .background(Color("ColorDeFondo"))
-            }//NavigationView
+            //}//NavigationView
             .navigationBarTitleDisplayMode(.inline)
             .blendMode(.sourceAtop)
             .toolbar(content: {
@@ -54,4 +54,3 @@ struct NotificationView_Previews: PreviewProvider {
         NotificationView()
     }
 }
-

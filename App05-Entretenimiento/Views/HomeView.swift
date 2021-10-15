@@ -20,7 +20,7 @@ struct HomeView: View {
                     .padding()
                     .multilineTextAlignment(.center)
                 ExpositionsCarousel()
-            } // VStack  
+            } // VStack
             .padding()
             Text("Acerca de nosotros")
                 .fontWeight(.bold)
@@ -82,6 +82,33 @@ struct HomeView: View {
                     .font(.title2)
             }
             .frame(height: 270.0)
+            Text("Visita nuestra tienda y nuestras redes sociales:")
+                .fontWeight(.bold)
+                .foregroundColor(Color("ColorRosa2"))
+                .font(.system(size: 30))
+                .multilineTextAlignment(.center)
+            HStack{
+                Link(destination: URL(string: "https://storemarco.art")!, label: {
+                    Image(systemName: "cart")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                })
+                Link(destination: URL(string: "https://es-la.facebook.com/pg/museomarcomty/events/")!, label: {
+                    Image("Facebook")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                })
+                Link(destination: URL(string: "https://www.instagram.com/museomarco/?hl=es")!, label: {
+                    Image("Instagram")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                })
+                Link(destination: URL(string: "https://twitter.com/MuseoMARCO?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor")!, label: {
+                    Image("Twitter")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                })
+        }//HStack
         } // ScrollView
         
         

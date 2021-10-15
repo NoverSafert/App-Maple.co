@@ -22,7 +22,7 @@ struct ReservarVGView: View {
     
     var body: some View {
             
-            NavigationView{
+            //NavigationView{
                     Form{
                         Section(header: Text("Detalle Reserva")){
                             TextField("Titulo", text: $tituloReservacion)
@@ -51,7 +51,7 @@ struct ReservarVGView: View {
                         
                     }//Form
                     .background(Color("ColorDeFondo"))
-            }//NavigationView
+            //}//NavigationView
             .navigationBarTitleDisplayMode(.inline)
             .navigationAppearance(backgroundColor: UIColor(Color("ColorRosa")), foregroundColor: .black)
             .blendMode(.sourceAtop)
