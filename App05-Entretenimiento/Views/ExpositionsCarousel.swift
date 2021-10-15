@@ -11,7 +11,7 @@ import HalfASheet
 struct ExpositionsCarousel: View {
     @EnvironmentObject private var media : MarColectionModel
     @State var showPopUp: Bool = false
-    @State private var selected: Exposition = MarColectionModel.init().expositions[0] //Exposition.defaultMedia
+    @State private var selected: MarColection = MarColectionModel.init().expositions[0] //Exposition.defaultMedia
     
     private func getScale(proxy: GeometryProxy) -> CGFloat {
         var scale: CGFloat = 1
@@ -39,7 +39,7 @@ struct ExpositionsCarousel: View {
                                         }
                                     }, label: {
                                         VStack(spacing: 1){
-                                            Image(expo.arrImages[0])
+                                            Image(expo.images[0])
                                                 .resizable()
                                                 .scaledToFit()
                                                 .frame(width: 280) // 150
@@ -51,7 +51,7 @@ struct ExpositionsCarousel: View {
                                                 .shadow(radius: 5)
                                                 .clipped()
                                                 .animation(.easeOut(duration: 0.5))
-                                            Text(expo.sName)
+                                            Text(expo.name)
                                                 .padding(.top)
                                                 .multilineTextAlignment(.center)
                                                 .foregroundColor(.black)

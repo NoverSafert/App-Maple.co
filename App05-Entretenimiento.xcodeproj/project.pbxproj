@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,7 +26,6 @@
 		C55E528327149DA2006EF31B /* MarColectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55E528227149DA2006EF31B /* MarColectionModel.swift */; };
 		C55E52862714A60E006EF31B /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55E52852714A60E006EF31B /* SheetView.swift */; };
 		C5778687270FA3D80007CEB3 /* MarColection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5778686270FA3D80007CEB3 /* MarColection.swift */; };
-		C596FDD9271610F600C001A2 /* HalfASheet in Frameworks */ = {isa = PBXBuildFile; productRef = C596FDD8271610F600C001A2 /* HalfASheet */; };
 		C5CE7569270E8B2F00B53F01 /* ImagesCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CE7568270E8B2F00B53F01 /* ImagesCarousel.swift */; };
 		FB24BEF7270E070A00D4A0F2 /* ExpositionsCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB24BEF6270E070A00D4A0F2 /* ExpositionsCarousel.swift */; };
 		FB2AB9B126DD499E007B0AD3 /* App05_EntretenimientoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2AB9B026DD499E007B0AD3 /* App05_EntretenimientoApp.swift */; };
@@ -92,7 +91,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C596FDD9271610F600C001A2 /* HalfASheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +214,6 @@
 			);
 			name = "App05-Entretenimiento";
 			packageProductDependencies = (
-				C596FDD8271610F600C001A2 /* HalfASheet */,
 			);
 			productName = "App05-Entretenimiento";
 			productReference = FB2AB9AD26DD499E007B0AD3 /* App05-Entretenimiento.app */;
@@ -246,7 +243,6 @@
 			);
 			mainGroup = FB2AB9A426DD499E007B0AD3;
 			packageReferences = (
-				C596FDD7271610F600C001A2 /* XCRemoteSwiftPackageReference "HalfASheet" */,
 			);
 			productRefGroup = FB2AB9AE26DD499E007B0AD3 /* Products */;
 			projectDirPath = "";
@@ -494,25 +490,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		C596FDD7271610F600C001A2 /* XCRemoteSwiftPackageReference "HalfASheet" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/franklynw/HalfASheet";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		C596FDD8271610F600C001A2 /* HalfASheet */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C596FDD7271610F600C001A2 /* XCRemoteSwiftPackageReference "HalfASheet" */;
-			productName = HalfASheet;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		ABEA519D2717411A00E84834 /* Model.xcdatamodeld */ = {

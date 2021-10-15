@@ -25,10 +25,8 @@ class ExpositionModel: ObservableObject {
                           boolVideo: false,
                           sVideo: "",
                           boolRecorrido: true,
-                          sRecorrido: "https://www.patiomarco.360s.mx/",
-                          isMarcolection: false,
-                          colection: MarColection(sizes: "", technique: "", year: 0)
-                            )
+                          sRecorrido: "https://www.patiomarco.360s.mx/"
+                          )
         expositions.append(expo)
             
         expo = Exposition(sName: "La poetica del regreso Mario Garcia Torres",
@@ -42,9 +40,8 @@ class ExpositionModel: ObservableObject {
                           boolVideo: true,
                           sVideo: "https://youtu.be/swhrA3qoqx4",
                           boolRecorrido: true,
-                          sRecorrido: "https://www.museomarco.360s.mx/",
-                          isMarcolection: false,
-                          colection: MarColection(sizes: "", technique: "", year: 0)                            )
+                          sRecorrido: "https://www.museomarco.360s.mx/"
+                            )
         expositions.append(expo)
     }
 }

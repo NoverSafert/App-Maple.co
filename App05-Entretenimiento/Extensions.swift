@@ -20,10 +20,7 @@ extension Exposition{
                                                 boolVideo: false,
                                                 sVideo: "",
                                                 boolRecorrido: true,
-                                                sRecorrido: "https://www.patiomarco.360s.mx/",
-                                                isMarcolection: false,
-                                                colection: MarColection(sizes: "", technique: "", year: 0
-                                                    )
+                                                sRecorrido: "https://www.patiomarco.360s.mx/"
     )
 }
 

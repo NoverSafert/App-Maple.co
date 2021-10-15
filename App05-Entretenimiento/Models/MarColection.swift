@@ -9,7 +9,10 @@ import SwiftUI
 
 struct MarColection: Identifiable{
     var id = UUID()
+    var name: String
+    var images: [String]
+    var autor: String
     var sizes: String
     var technique: String
-    var year: Int
+    var year: String
 }

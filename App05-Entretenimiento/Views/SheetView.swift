@@ -9,31 +9,31 @@ import SwiftUI
 
 struct SheetView: View {
     @Binding var show: Bool
-    var expo: Exposition
+    var expo: MarColection
     var body: some View {
         NavigationView{
             
             VStack{
-                Text("Autor de la obra: \(expo.sCuraduria)")
+                Text("Autor de la obra: \(expo.autor)")
                     .fontWeight(.medium)
                     .multilineTextAlignment(.leading)
                     .padding()
-                Text("Medidas de la obra: \(expo.colection.sizes)")
+                Text("Medidas de la obra: \(expo.sizes)")
                     .fontWeight(.medium)
                     .multilineTextAlignment(.leading)
                     .padding()
-                Text("Tecnicas utilizadas en la obra: \(expo.colection.technique)")
+                Text("Tecnicas utilizadas en la obra: \(expo.technique)")
                     .fontWeight(.medium)
                     .multilineTextAlignment(.leading)
                     .padding()
-                Text("Fecha de exposicion: \(expo.colection.year)")
+                Text("Fecha de exposicion: \(expo.year)")
                     .fontWeight(.medium)
                     .multilineTextAlignment(.leading)
                     .padding()
                 Spacer()
             } // VStack
 
-                .navigationBarTitle(Text(expo.sName), displayMode: .inline)
+                .navigationBarTitle(Text(expo.name), displayMode: .inline)
                 .navigationBarItems(trailing: Button(action: {self.show.toggle()}, label: {
                     Image(systemName: "xmark.circle")
                         .foregroundColor(.white)
@@ -44,6 +44,6 @@ struct SheetView: View {
 
 struct SheetView_Previews: PreviewProvider {
     static var previews: some View {
-        SheetView(show: .constant(true), expo: Exposition.defaultMedia)
+        SheetView(show: .constant(true), expo: MarColection(name: "---", images: ["logo"], autor: "---", sizes: "---", technique: "---", year: "---"))
     }
 }
