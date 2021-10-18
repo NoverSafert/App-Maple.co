@@ -3,6 +3,7 @@
 //  App04-Peliculas
 //
 //  Created by Team 4 on 16/03/21.
+//view model
 //
 
 import SwiftUI
@@ -43,5 +44,47 @@ class ExpositionModel: ObservableObject {
                           sRecorrido: "https://www.museomarco.360s.mx/"
                             )
         expositions.append(expo)
+    }
+
+    //aquí se llama la función para obtener exposiciones
+    func getAll(){
+        guard let url = URL(string: "https://") // poner url de la api
+        else{
+            fatalError("Invalid URL")
+
+        }
+        
+        URLSession.shared.dataTask(with: url){ data, response, error in
+            
+            guard let data = data, error == nil else {
+                return
+            }
+            
+            let expoResponse = try? JSONDecoder().decode(ExpoResponse.self, from: data)
+            if let expoResponse = expoResponse{
+                DispatchQueue.main.async {
+                    self.expo = expoResponse.results
+                }
+                
+            }
+            
+        }.resume()
+    }
+
+
+    func loadData(completion:@escaping ([ExpoResponse]) -> ()) {
+        guard let url = URL(string: "https://") else { //poner url de la api
+            print("Invalid url...")
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            let expo = try! JSONDecoder().decode([ExpoResponse].self, from: data!)
+            print(expo)
+            DispatchQueue.main.async {
+                completion(expo)
+            }
+        }.resume()
+
     }
 }

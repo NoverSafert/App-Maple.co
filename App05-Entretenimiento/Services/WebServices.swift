@@ -134,4 +134,19 @@ class Webservice{
             
     }
 
+    func getAllexposition(completion: @escapeing(Result<ExpoResponse, ComunicationError>) -> Void){
+         guard let url = URL(string: "http://") else { //poner url de la api 
+            completion(.failure(.custom(errorMessage: "URL is not Correct")))
+            return
+        }
+    
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            print(data!.count)
+            let Response = try! JSONDecoder().decode(ExpoResponse.self, from: data!)
+            print(Response)
+            DispatchQueue.main.async {
+                completion(.success(Response))
+            }
+        }.resume()
+    }
 }
