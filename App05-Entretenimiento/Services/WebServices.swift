@@ -79,7 +79,7 @@ class Webservice{
 
     func signup(username: String, password: String, completion: @escaping (Result<Bool, ComunicationError>) -> Void) {
         
-        guard let url = URL(string: "https://api-tc2007b.herokuapp.com/users/addUser") else {
+        guard let url = URL(string: "https://api-tc2007b.herokuapp.com/users/addUser") else { //cambiar liga api
             completion(.failure(.custom(errorMessage: "URL is not Correct")))
             return
         }
@@ -117,7 +117,7 @@ class Webservice{
     
     func getUsers(completion: @escaping (Result<UserResponse, ComunicationError>) -> Void) {
         
-        guard let url = URL(string: "https://api-tc2007b.herokuapp.com/users") else {
+        guard let url = URL(string: "https://api-tc2007b.herokuapp.com/users") else { // cambiar liga api
             completion(.failure(.custom(errorMessage: "URL is not Correct")))
             return
         }

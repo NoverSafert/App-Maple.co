@@ -11,9 +11,9 @@ import SwiftUI
 class ExpositionModel: ObservableObject {
     @Published var expositions = [Exposition]()
     init() {
-        LoadInfo()
+        getAll()
     }
-    func LoadInfo(){
+   /* func LoadInfo(){
         var expo: Exposition
         expo = Exposition(sName: "INDEX",
                           sDescription: "A raíz de la fuerte crisis económica que enfrentan los museos a nivel internacional, y derivado de la necesidad de buscar nuevos posicionamientos de las producciones artísticas actuales, MARCO pensó en el patio de las esculturas como una posibilidad de generar nexos con la comunidad artística de Monterrey que se ha preocupado por buscar un lugar en el espacio institucional global. Por tal motivo, su directora Taiyana Pimentel en colaboración con los Miembros del Consejo Directivo, pensaron en este proyecto. \nEl subtexto de la exposición es relevante al momento que estamos todos viviendo e incita a reflexionar sobre las maneras en las cuales los eventos de actualidad informan el trabajo creativo de artistas reconocidos mundialmente.",
@@ -44,7 +44,7 @@ class ExpositionModel: ObservableObject {
                           sRecorrido: "https://www.museomarco.360s.mx/"
                             )
         expositions.append(expo)
-    }
+    }*/
 
     //aquí se llama la función para obtener exposiciones
     func getAll(){
