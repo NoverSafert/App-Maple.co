@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import HalfASheet
 
 struct ExpositionsCarousel: View {
     @EnvironmentObject private var media : MarColectionModel
