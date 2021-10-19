@@ -17,7 +17,7 @@ struct MediaRowView: View {
                         .resizable()
                         .scaledToFit()
                         .cornerRadius(3.0)
-                        .frame(height: 300)
+                        .frame(height: 250)
                 
                 VStack(alignment: .leading, spacing: 10){
                     Text(media.sName)
