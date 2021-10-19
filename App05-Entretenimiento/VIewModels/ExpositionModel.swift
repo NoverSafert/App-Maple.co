@@ -48,7 +48,7 @@ class ExpositionModel: ObservableObject {
 
     //aquí se llama la función para obtener exposiciones
     func getAll(){
-        guard let url = URL(string: "https://") // poner url de la api
+        guard let url = URL(string: "https://100.24.228.237:10124/expositions")
         else{
             fatalError("Invalid URL")
 
@@ -73,7 +73,7 @@ class ExpositionModel: ObservableObject {
 
 
     func loadData(completion:@escaping ([ExpoResponse]) -> ()) {
-        guard let url = URL(string: "https://") else { //poner url de la api
+        guard let url = URL(string: "https://100.24.228.237:10124/expositions") else { 
             print("Invalid url...")
             return
         }

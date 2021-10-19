@@ -22,8 +22,6 @@ struct Exposition: Identifiable, Encodable, Decodable{
     var sVideo: String
     var boolRecorrido: Bool
     var sRecorrido: String
-    var isMarcolection: Bool
-    var colection: MarColection
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
@@ -34,13 +32,11 @@ struct Exposition: Identifiable, Encodable, Decodable{
         case sSalas =  "rooms"
         case sTecnicas = "techniques"
         case sObras = "pieces"
-        case arrImages =  ["images"]
+        case arrImages =  "images"
         case boolVideo = "hasVideo"
         case sVideo = "video"
         case boolRecorrido = "hasTour"
         case sRecorrido = "tour"
-        case isMarcolection = 
-        case colection = 
     }
 }
 
