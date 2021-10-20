@@ -15,24 +15,29 @@ struct NotificationView: View {
     }
     
     @Environment(\.managedObjectContext) var viewContext
+    @EnvironmentObject var reservas : ReservaViewModel
+    //@FetchRequest(entity: Reservacion.entity(), sortDescriptors: [NSSortDescriptor(key:  "fecha", ascending: false)])
 
-    @FetchRequest(entity: Reservacion.entity(), sortDescriptors: [NSSortDescriptor(key:  "fecha", ascending: false)])
-
-    var fetchedItems: FetchedResults<Reservacion>
+    //var fetchedItems: FetchedResults<Reservacion>
     
     var body: some View {
             //NavigationView{
                 List{
-                    ForEach(fetchedItems, id:\.self){item in
+                    ForEach(reservas.arrReservas){item in
                         /*
                         NavigationLink(
                             destination: ReservarVGView(tituloReservacion: item.titulo!, usuario: item.usuario!, cantPero: item.cantPer, fecha: item.fecha!, hora: item.hora!)){
                             Text(item.titulo!)
                         }
                         */
-                        Text(item.titulo!)
+                        Text(item.titulo)
                     }//for
                 }//List
+                /*.onAppear(){
+                    ReservaViewModel().getReservas() { (reservaUpdate) in
+                        
+                    }
+                }*/
                 .background(Color("ColorDeFondo"))
             //}//NavigationView
             .navigationBarTitleDisplayMode(.inline)

@@ -14,6 +14,8 @@
 		5A27CE1E270A6F25009E6A8B /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A27CE1D270A6F25009E6A8B /* WebServices.swift */; };
 		5A27CE25270A78EE009E6A8B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A27CE24270A78EE009E6A8B /* SignUpView.swift */; };
 		5A5810B4270A7C57001EDC9E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5810B3270A7C57001EDC9E /* UserModel.swift */; };
+		5A703CF02720CDE2007F0392 /* ReservaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A703CEF2720CDE2007F0392 /* ReservaViewModel.swift */; };
+		5A703CF32720CDF8007F0392 /* ReservaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A703CF22720CDF8007F0392 /* ReservaModel.swift */; };
 		5A7D012B26E84F0900ECCB72 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7D012A26E84F0900ECCB72 /* NotificationView.swift */; };
 		5A9F12F926DF390E0055ED81 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9F12F826DF390E0055ED81 /* HomeView.swift */; };
 		5ACABBA6271E72AF000E7B12 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACABBA5271E72AF000E7B12 /* UsersViewModel.swift */; };
@@ -53,6 +55,8 @@
 		5A27CE1D270A6F25009E6A8B /* WebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
 		5A27CE24270A78EE009E6A8B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		5A5810B3270A7C57001EDC9E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		5A703CEF2720CDE2007F0392 /* ReservaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservaViewModel.swift; sourceTree = "<group>"; };
+		5A703CF22720CDF8007F0392 /* ReservaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservaModel.swift; sourceTree = "<group>"; };
 		5A7D012A26E84F0900ECCB72 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		5A9F12F826DF390E0055ED81 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5ACABBA5271E72AF000E7B12 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 			children = (
 				5ACABBA5271E72AF000E7B12 /* UsersViewModel.swift */,
 				C55E528227149DA2006EF31B /* MarColectionModel.swift */,
+				5A703CEF2720CDE2007F0392 /* ReservaViewModel.swift */,
 				5A064B01271E37510000007F /* ExpositionModel.swift */,
 				5A064B02271E37510000007F /* LoginViewModel.swift */,
 			);
@@ -177,6 +182,7 @@
 			children = (
 				FBA66A0726E135600020CC24 /* Exposition.swift */,
 				C5778686270FA3D80007CEB3 /* MarColection.swift */,
+				5A703CF22720CDF8007F0392 /* ReservaModel.swift */,
 				5A5810B3270A7C57001EDC9E /* UserModel.swift */,
 			);
 			path = Models;
@@ -295,10 +301,12 @@
 				5A5810B4270A7C57001EDC9E /* UserModel.swift in Sources */,
 				5A9F12F926DF390E0055ED81 /* HomeView.swift in Sources */,
 				ABFD223527134DE200A07529 /* InfoMarcoView.swift in Sources */,
+				5A703CF02720CDE2007F0392 /* ReservaViewModel.swift in Sources */,
 				C5778687270FA3D80007CEB3 /* MarColection.swift in Sources */,
 				C5CE7569270E8B2F00B53F01 /* ImagesCarousel.swift in Sources */,
 				5A27CE15270A6CA6009E6A8B /* LoginView.swift in Sources */,
 				FBA66A0E26E135B50020CC24 /* NavAppereanceModifier.swift in Sources */,
+				5A703CF32720CDF8007F0392 /* ReservaModel.swift in Sources */,
 				FBA66A1E26E140360020CC24 /* WebView.swift in Sources */,
 				FBA66A1726E13BB50020CC24 /* ExpositionDetailView.swift in Sources */,
 				ABEA51A22717414800E84834 /* Persistence.swift in Sources */,

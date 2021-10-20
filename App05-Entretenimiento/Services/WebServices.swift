@@ -191,7 +191,7 @@ class Webservice{
             
             //Codigo para formatear la fecha antes de enviarla a la API
             let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-mm-dd"
+            formatter.dateFormat = "yyyy-MM-dd"
             let encoder = JSONEncoder()
             encoder.dateEncodingStrategy = .formatted(formatter)
             
@@ -224,4 +224,30 @@ class Webservice{
                 
             }.resume()
         }
-}
+    
+    func getReservas(username : String, completion: @escaping (Result<ReservasResponse, ComunicationError>) -> Void) {
+            
+            guard let url = URL(string: "http://100.24.228.237:10124/reservations/" + username) else {
+                completion(.failure(.custom(errorMessage: "URL is not Correct")))
+                return
+            }
+            print(url)
+        
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+
+            let decoder = JSONDecoder()
+            //decoder.keyDecodingStrategy = .convertFromSnakeCase
+            decoder.dateDecodingStrategy = .formatted(formatter)
+            
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                //let Response = try! JSONDecoder().decode(ReservasResponse.self, from: data!)
+                let Response = try! decoder.decode(ReservasResponse.self, from: data!)
+                print(Response)
+                DispatchQueue.main.async {
+                    completion(.success(Response))
+                }
+            }.resume()
+                
+            
+        }}

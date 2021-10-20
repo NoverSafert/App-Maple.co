@@ -14,6 +14,7 @@ struct App05_EntretenimientoApp: App {
     @StateObject var media = ExpositionModel()
     @StateObject var loginVM = LoginViewModel()
     @StateObject var MarColect = MarColectionModel()
+    @StateObject var reserva = ReservaViewModel()
     
     var body: some Scene {
         WindowGroup {
@@ -21,6 +22,7 @@ struct App05_EntretenimientoApp: App {
                 .environmentObject(media)
                 .environmentObject(loginVM)
                 .environmentObject(MarColect)
+                .environmentObject(reserva)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

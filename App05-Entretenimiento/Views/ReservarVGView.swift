@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ReservarVGView: View {
     
-    
+    @EnvironmentObject var reserva : ReservaViewModel
     
     @Environment(\.managedObjectContext) var viewContext
     @Environment(\.presentationMode) var presentationMode
@@ -18,7 +18,8 @@ struct ReservarVGView: View {
     @State var usuario = ""
     @State var cantPer = 0
     @State var fecha = Date()
-    @State var hora = Date()
+    @State var hora : String = "10:00 AM"
+    var horas_disponibles  = ["10:00 AM", "11:30 AM", "1:00 PM", "2:30 PM", "4:00 PM", "5:30 PM"]
     
     var body: some View {
             
@@ -38,12 +39,17 @@ struct ReservarVGView: View {
                             DatePicker("Fecha", selection: $fecha,
                                        in: Date()...,
                                        displayedComponents: .date)
-                            DatePicker("Hora", selection: $hora,
-                                       displayedComponents: .hourAndMinute)
+                            Picker("Hora", selection: $hora){
+                                ForEach(horas_disponibles, id: \.self){ horaTemp in
+                                    Text(horaTemp)
+                                }
+                            }
+                            .pickerStyle(SegmentedPickerStyle())
+                            .frame(width: 400, height: 100)
                         }//Boton2
                         
                         Button(action: {
-                                guardarDatos()
+                            reserva.addReserva(titulo: tituloReservacion, username: usuario, fecha: fecha, hora: hora, cantPer: cantPer)
                             self.presentationMode.wrappedValue.dismiss()
                         }){
                             Text("Guardar Reserva")
@@ -65,6 +71,7 @@ struct ReservarVGView: View {
                 }) // ToolBarItem Content
             }) // ToolBar Content
         }
+    /*
         func guardarDatos(){
             guard self.tituloReservacion != "" else{
                 return
@@ -81,7 +88,7 @@ struct ReservarVGView: View {
                 print(error.localizedDescription)
             }
         }
-    
+    */
         init(){
             UITableView.appearance().backgroundColor = .clear
         }
