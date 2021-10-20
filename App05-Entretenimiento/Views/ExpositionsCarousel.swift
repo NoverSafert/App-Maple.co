@@ -8,6 +8,7 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
+
 struct ExpositionsCarousel: View {
     @EnvironmentObject private var MarColect : MarColectionModel
     @State var showPopUp: Bool = false
