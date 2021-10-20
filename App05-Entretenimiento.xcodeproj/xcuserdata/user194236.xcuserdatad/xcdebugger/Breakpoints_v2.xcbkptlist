@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "E79657B4-8F6B-4BA6-B3C5-1529866E3031"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE557401-0695-4446-8B12-D7C4B4E6B761"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "App05-Entretenimiento/Models/Exposition.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "CodingKeys"
+            landmarkType = "13">
+            <Locations>
+               <Location
+                  uuid = "DE557401-0695-4446-8B12-D7C4B4E6B761 - 3abc6f6bc7942115"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "App05_Entretenimiento.Exposition.CodingKeys.init(rawValue: Swift.String) -&gt; Swift.Optional&lt;App05_Entretenimiento.Exposition.CodingKeys&gt;"
+                  moduleName = "App05-Entretenimiento"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user194236/Desktop/A00827513/App05-Entretenimiento%2012.50-2.40/App05-Entretenimiento/Models/Exposition.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "89">
+               </Location>
+               <Location
+                  uuid = "DE557401-0695-4446-8B12-D7C4B4E6B761 - b6756cc202dee23c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "App05_Entretenimiento.Exposition.CodingKeys.rawValue.getter : Swift.String"
+                  moduleName = "App05-Entretenimiento"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user194236/Desktop/A00827513/App05-Entretenimiento%2012.50-2.40/App05-Entretenimiento/Models/Exposition.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "830E361B-CE32-4875-BA72-7F73092A4A70"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "App05-Entretenimiento/Views/SheetView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

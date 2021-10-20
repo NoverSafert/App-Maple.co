@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct SheetView: View {
     @Binding var show: Bool
@@ -31,7 +32,8 @@ struct SheetView: View {
                         .fontWeight(.medium)
                         .multilineTextAlignment(.leading)
                         .padding()
-                    Image(expo.images[1])
+                    //Image(expo.images[1])
+                    AnimatedImage(url: URL(string: "http://100.24.228.237:10124/colectMarco/" + expo.images[1] + ".jpg"))
                         .resizable()
                         .scaledToFit()
                         .frame(width: 280) // 150
@@ -57,6 +59,6 @@ struct SheetView: View {
 
 struct SheetView_Previews: PreviewProvider {
     static var previews: some View {
-        SheetView(show: .constant(true), expo: MarColection(name: "---", images: ["logo"], autor: "---", sizes: "---", technique: "---", year: "---"))
+        SheetView(show: .constant(true), expo: MarColection(id : "1", name: "---", images: ["logo"], autor: "---", sizes: "---", technique: "---", year: "0"))
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct ImagesCarousel: View {
     var images: [String]
@@ -30,9 +31,9 @@ struct ImagesCarousel: View {
                                 GeometryReader{ proxy in
                                     let scale = getScale(proxy: proxy)
                                     VStack(spacing: 1){
-                                        Image(images[photo])
+                                        AnimatedImage(url: URL(string: "http://100.24.228.237:10124/exposition/" + images[photo] + ".jpg"))
                                             .resizable()
-                                            .scaledToFit()
+                                            .scaledToFill()
                                             .frame(width: 280) // 150
                                             .overlay(
                                                 RoundedRectangle(cornerRadius: 5)

@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
+
 
 struct ExpositionsCarousel: View {
-    @EnvironmentObject private var media : MarColectionModel
+    @EnvironmentObject private var MarColect : MarColectionModel
     @State var showPopUp: Bool = false
-    @State private var selected: MarColection = MarColectionModel.init().expositions[0] //Exposition.defaultMedia
+    @State var selected = MarColection.defaultMedia //Exposition.defaultMedia
     
     private func getScale(proxy: GeometryProxy) -> CGFloat {
         var scale: CGFloat = 1
@@ -28,7 +30,7 @@ struct ExpositionsCarousel: View {
                     // Inicio del carrusel de imagenes
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack(spacing: 30){ // spacing: 50
-                            ForEach(media.expositions){ expo in
+                            ForEach(MarColect.expositions){ expo in
                                 GeometryReader{ proxy in
                                     let scale = getScale(proxy: proxy)
                                     Button(action:{
@@ -38,7 +40,8 @@ struct ExpositionsCarousel: View {
                                         }
                                     }, label: {
                                         VStack(spacing: 1){
-                                            Image(expo.images[0])
+                                            //Image(expo.images[0])
+                                            AnimatedImage(url: URL(string: "http://100.24.228.237:10124/colectMarco/" + expo.images[0] + ".jpg"))
                                                 .resizable()
                                                 .scaledToFit()
                                                 .frame(width: 280) // 150
@@ -74,7 +77,7 @@ struct ExpositionsCarousel: View {
 
 struct CarouselView_Previews: PreviewProvider {
     static var previews: some View {
-        ExpositionsCarousel()
+        ExpositionsCarousel(selected: MarColection.defaultMedia)
             .environmentObject(MarColectionModel())
     }
 }

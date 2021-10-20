@@ -39,10 +39,22 @@ struct AddUserResponse: Codable{
     let success: Bool?
 }
 
+struct AddReservaRequestBody: Codable{
+    let titulo : String
+    let usuario: String
+    let fecha : Date
+    let hora : String
+    let canPer : Int
+}
+
+struct AddReservaResponse: Codable{
+    let message: String?
+}
+
 class Webservice{
     func login(username: String, password: String, completion: @escaping (Result<String, AuthenticationError>) -> Void) {
         
-        guard let url = URL(string: "https://api-tc2007b.herokuapp.com/users/login") else {
+        guard let url = URL(string: "https://100.24.228.237:10124/users/login") else {
             completion(.failure(.custom(errorMessage: "URL is not Correct")))
             return
         }
@@ -79,7 +91,7 @@ class Webservice{
 
     func signup(username: String, password: String, completion: @escaping (Result<Bool, ComunicationError>) -> Void) {
         
-        guard let url = URL(string: "https://api-tc2007b.herokuapp.com/users/addUser") else {
+        guard let url = URL(string: "https://100.24.228.237:10124/users/addUser") else {
             completion(.failure(.custom(errorMessage: "URL is not Correct")))
             return
         }
@@ -117,7 +129,7 @@ class Webservice{
     
     func getUsers(completion: @escaping (Result<UserResponse, ComunicationError>) -> Void) {
         
-        guard let url = URL(string: "https://api-tc2007b.herokuapp.com/users") else {
+        guard let url = URL(string: "https://100.24.228.237:10124/users") else {
             completion(.failure(.custom(errorMessage: "URL is not Correct")))
             return
         }
@@ -134,4 +146,82 @@ class Webservice{
             
     }
 
+    func getAllExposition(completion: @escaping(Result<ExpoResponse, ComunicationError>) -> Void){
+         guard let url = URL(string: "http://100.24.228.237:10124/expositions/") else {
+            completion(.failure(.custom(errorMessage: "URL is not Correct")))
+            return
+        }
+    
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            print(data!.count)
+            let Response = try! JSONDecoder().decode(ExpoResponse.self, from: data!)
+            print(Response)
+            DispatchQueue.main.async {
+                completion(.success(Response))
+            }
+        }.resume()
+    }
+    
+    func getAllMarcoColection(completion: @escaping(Result<MarColectionResponse, ComunicationError>) -> Void){
+        guard let url = URL(string: "http://100.24.228.237:10124/marcolections/") else {
+            completion(.failure(.custom(errorMessage: "URL is not Correct")))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url){ data, response, error in
+            print(data!.count)
+            let Response = try! JSONDecoder().decode(MarColectionResponse.self, from: data!)
+            print(Response)
+            DispatchQueue.main.async {
+                completion(.success(Response))
+            }
+        }.resume()
+    }
+    
+    func addReserva(titulo: String, username : String, fecha: Date, hora: String, cantPer: Int, completion: @escaping (Result<Bool, ComunicationError>) -> Void) {
+            
+            guard let url = URL(string: "http://100.24.228.237:10124/reservations/add") else {
+                completion(.failure(.custom(errorMessage: "URL is not Correct")))
+                return
+            }
+            
+            let body = AddReservaRequestBody(titulo: titulo, usuario: username, fecha: fecha, hora: hora, canPer: cantPer)
+            
+            print(body)
+            
+            //Codigo para formatear la fecha antes de enviarla a la API
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-mm-dd"
+            let encoder = JSONEncoder()
+            encoder.dateEncodingStrategy = .formatted(formatter)
+            
+            
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            //request.httpBody = try? JSONEncoder().encode(body)
+            request.httpBody = try? encoder.encode(body)  // con esta linea de código puedes enviar la fecha formateada
+            
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                
+                guard let data = data, error == nil else {
+                    completion(.failure(.custom(errorMessage: "No data")))
+                    return
+                }
+                
+                guard let AddReservaResponse = try? JSONDecoder().decode(AddReservaResponse.self, from: data) else {
+                    completion(.failure(.connectionError))
+                    return
+                }
+                
+                /*guard let token = AddReservaResponse.success else {
+                    completion(.failure(.connectionError))
+                    return
+                }*/
+                
+                completion(.success(true))
+                
+                
+            }.resume()
+        }
 }
