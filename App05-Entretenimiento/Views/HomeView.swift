@@ -19,7 +19,7 @@ struct HomeView: View {
                     .font(.system(size: 30))
                     .padding()
                     .multilineTextAlignment(.center)
-                ExpositionsCarousel()
+                ExpositionsCarousel(selected: MarColection.defaultMedia)
             } // VStack
             .padding()
             Text("Acerca de nosotros")

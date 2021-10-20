@@ -39,11 +39,6 @@ struct AddUserResponse: Codable{
     let success: Bool?
 }
 
-struct ExpoResponse: Codable{
-    let message: String?
-    let success: Bool?
-}
-
 struct AddReservaRequestBody: Codable{
     let titulo : String
     let usuario: String
@@ -152,7 +147,7 @@ class Webservice{
     }
 
     func getAllExposition(completion: @escaping(Result<ExpoResponse, ComunicationError>) -> Void){
-         guard let url = URL(string: "http://100.24.228.237:10124/expositions") else {
+         guard let url = URL(string: "http://100.24.228.237:10124/expositions/") else {
             completion(.failure(.custom(errorMessage: "URL is not Correct")))
             return
         }
@@ -160,6 +155,22 @@ class Webservice{
         URLSession.shared.dataTask(with: url) { data, response, error in
             print(data!.count)
             let Response = try! JSONDecoder().decode(ExpoResponse.self, from: data!)
+            print(Response)
+            DispatchQueue.main.async {
+                completion(.success(Response))
+            }
+        }.resume()
+    }
+    
+    func getAllMarcoColection(completion: @escaping(Result<MarColectionResponse, ComunicationError>) -> Void){
+        guard let url = URL(string: "http://100.24.228.237:10124/marcolections/") else {
+            completion(.failure(.custom(errorMessage: "URL is not Correct")))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url){ data, response, error in
+            print(data!.count)
+            let Response = try! JSONDecoder().decode(MarColectionResponse.self, from: data!)
             print(Response)
             DispatchQueue.main.async {
                 completion(.success(Response))

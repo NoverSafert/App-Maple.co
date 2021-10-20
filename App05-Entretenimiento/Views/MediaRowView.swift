@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct MediaRowView: View {
     let media : Exposition
@@ -13,7 +14,7 @@ struct MediaRowView: View {
     var body: some View {
         VStack{
             VStack{
-                Image(media.arrImages[0])
+                AnimatedImage(url: URL(string: "http://100.24.228.237:10124/exposition/" + media.arrImages[0]  + ".jpg"))
                         .resizable()
                         .scaledToFit()
                         .cornerRadius(3.0)

@@ -16,8 +16,11 @@ struct ExpositionsView: View {
                 .ignoresSafeArea()
             VStack{
                 Text("Actuales")
-                    .font(.headline)
-                    .foregroundColor(.black)
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(Color("ColorRosa2"))
+                    .font(.system(size: 30))
+                    .offset(x: 0.0, y: 15.0)
+                    .multilineTextAlignment(.center)
                 
                 ScrollView(.vertical, showsIndicators: false){
                     VStack{

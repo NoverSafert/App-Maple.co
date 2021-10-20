@@ -5,18 +5,22 @@
 //  Created by Team 4 on 16/03/21.
 //
 
-import SwiftUI
+import Foundation
+
+struct ExpoResponse : Codable {
+    var expositions : [Exposition]
+}
 
 struct Exposition: Identifiable, Encodable, Decodable{
     
-    var id = String
+    var id : String
     var sName: String
     var sDescription: String
     var sCuraduria: String // Autor
     var sMuseografia: String
     var sSalas: String
     var sTecnicas: String
-    var sObras: String
+    var sObras: [String]
     var arrImages: [String]
     var boolVideo: Bool
     var sVideo: String
@@ -26,7 +30,7 @@ struct Exposition: Identifiable, Encodable, Decodable{
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case sName = "name"
-        case sDescription = "description"
+        case sDescription = "descrption"
         case sCuraduria = "autor" // Autor
         case sMuseografia =  "museography"
         case sSalas =  "rooms"

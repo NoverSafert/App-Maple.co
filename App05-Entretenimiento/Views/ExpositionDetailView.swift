@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct FullScreenModalView: View { // 1
     let recorrido: String
@@ -37,8 +38,8 @@ struct ExpositionDetailView: View {
                     ZStack{
                         //logo de expo
                             VStack{
-                                
-                                Image(exposition.arrImages[0])
+                                //Image(exposition.arrImages[0])
+                                AnimatedImage(url: URL(string: "http://100.24.228.237:10124/exposition/" + exposition.arrImages[0] + ".jpg"))
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: 200)
