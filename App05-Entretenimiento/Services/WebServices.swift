@@ -54,7 +54,7 @@ struct AddReservaResponse: Codable{
 class Webservice{
     func login(username: String, password: String, completion: @escaping (Result<String, AuthenticationError>) -> Void) {
         
-        guard let url = URL(string: "https://100.24.228.237:10124/users/login") else {
+        guard let url = URL(string: "http://100.24.228.237:10124/users/login") else {
             completion(.failure(.custom(errorMessage: "URL is not Correct")))
             return
         }
@@ -91,7 +91,7 @@ class Webservice{
 
     func signup(username: String, password: String, completion: @escaping (Result<Bool, ComunicationError>) -> Void) {
         
-        guard let url = URL(string: "https://100.24.228.237:10124/users/addUser") else {
+        guard let url = URL(string: "http://100.24.228.237:10124/users/addUser") else {
             completion(.failure(.custom(errorMessage: "URL is not Correct")))
             return
         }
@@ -129,7 +129,7 @@ class Webservice{
     
     func getUsers(completion: @escaping (Result<UserResponse, ComunicationError>) -> Void) {
         
-        guard let url = URL(string: "https://100.24.228.237:10124/users") else {
+        guard let url = URL(string: "http://100.24.228.237:10124/users") else {
             completion(.failure(.custom(errorMessage: "URL is not Correct")))
             return
         }
