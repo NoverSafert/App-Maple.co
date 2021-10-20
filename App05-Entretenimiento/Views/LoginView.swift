@@ -10,35 +10,58 @@ import SwiftUI
 struct LoginView: View {
     
     @StateObject private var loginVM = LoginViewModel()
-    
     @State var showSignUp : Bool = false
     
     var body: some View {
         
         ZStack{
             Color("ColorDeFondo")
+                .ignoresSafeArea(.all)
             VStack{
                 Image("LogoMarco")
+                    
                 VStack{
-                            TextField("username", text:$loginVM.username)
-                            SecureField("username", text:$loginVM.password)
+                    TextField("Usuario", text: $loginVM.username)
+                        .frame(width: 300, height: 40)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .autocapitalization(.none)
+                    SecureField("Contraseña", text: $loginVM.password)
+                        .frame(width: 300, height: 40, alignment: .center)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .autocapitalization(.none)
                             
                             Button(action: {
-                                
+                                print(loginVM.username + loginVM.password)
                                 loginVM.login()
                                 
                             }, label: {
-                                Text("Login")
+                                Text("Inicia Sesion")
+                                    .fontWeight(.semibold)
+                                    .frame(width: 125, height: 50)
+                                    .background(Color("ColorRosa"))
+                                    .clipShape(RoundedRectangle(cornerRadius: 50))
+                                    .foregroundColor(.white)
+                                    .padding(3)
+                                    .hoverEffect(.highlight)
+                                
                             })
                             
                             Button(action: {
                                 showSignUp.toggle()
                                 
                             }, label: {
-                                Text("SignUP")
+                                Text("Registrate")
+                                    .fontWeight(.semibold)
+                                    .frame(width: 100, height: 50)
+                                    .background(Color("ColorRosa"))
+                                    .clipShape(RoundedRectangle(cornerRadius: 90))
+                                    .foregroundColor(.white)
+                                    .hoverEffect(.highlight)
                             })
                             .sheet(isPresented: $showSignUp, content: {
-                                SignUpView()
+                                SignUpView(show: $showSignUp)
                             })
                         }//Vstack
             }//Vstack
