@@ -21,7 +21,8 @@ BD.conex();
 dotenv.config();
 app.use(morgan('dev'));
 app.use("/", express.static("public"));
+app.use(express.static("src"))
 
 app.listen(port , () =>{    
-    console.log('API on: http://localhost:' + port)
+    console.log('API on: http://100.24.228.237:' + port)
 });
