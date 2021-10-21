@@ -24,6 +24,7 @@ class LoginViewModel : ObservableObject {
                 DispatchQueue.main.async {
                     self.isLoggedin = true
                 }
+                print(self.isLoggedin)
                 UserDefaults.standard.setValue(self.username, forKey: "username")
                 UserDefaults.standard.setValue(self.password, forKey: "password")
                 UserDefaults.standard.setValue(token, forKey: "token")

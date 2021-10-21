@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MainView: View {
     
+    @EnvironmentObject var loginVM : LoginViewModel
+    
     enum Tab{
         case home
         case exposiciones
@@ -111,7 +113,7 @@ struct MainView: View {
 
                 
                 NavigationView{
-                    LoginView()
+                    logManager()
                     //AccountView(nombre: $nombre)
                 }
                 .tabItem{

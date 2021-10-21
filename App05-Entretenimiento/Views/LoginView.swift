@@ -9,7 +9,8 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @StateObject private var loginVM = LoginViewModel()
+    //@StateObject private var loginVM = LoginViewModel()
+    @EnvironmentObject var loginVM : LoginViewModel
     @State var showSignUp : Bool = false
     
     var body: some View {
@@ -35,6 +36,7 @@ struct LoginView: View {
                             Button(action: {
                                 print(loginVM.username + loginVM.password)
                                 loginVM.login()
+                                print("\(loginVM.isLoggedin)" + " login")
                                 
                             }, label: {
                                 Text("Inicia Sesion")

@@ -36,6 +36,7 @@
 		FB2AB9B326DD499E007B0AD3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2AB9B226DD499E007B0AD3 /* MainView.swift */; };
 		FB2AB9B526DD49A0007B0AD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB2AB9B426DD49A0007B0AD3 /* Assets.xcassets */; };
 		FB2AB9B826DD49A0007B0AD3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB2AB9B726DD49A0007B0AD3 /* Preview Assets.xcassets */; };
+		FB5D54552721E51800DCF96F /* logManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D54542721E51800DCF96F /* logManager.swift */; };
 		FBA66A0226E135480020CC24 /* Enumerators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA66A0126E135480020CC24 /* Enumerators.swift */; };
 		FBA66A0526E135540020CC24 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA66A0426E135540020CC24 /* Extensions.swift */; };
 		FBA66A0926E135600020CC24 /* Exposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA66A0726E135600020CC24 /* Exposition.swift */; };
@@ -79,6 +80,7 @@
 		FB2AB9B426DD49A0007B0AD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB2AB9B726DD49A0007B0AD3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FB2AB9B926DD49A0007B0AD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB5D54542721E51800DCF96F /* logManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logManager.swift; sourceTree = "<group>"; };
 		FBA66A0126E135480020CC24 /* Enumerators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enumerators.swift; sourceTree = "<group>"; };
 		FBA66A0426E135540020CC24 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FBA66A0726E135600020CC24 /* Exposition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exposition.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				FB2AB9B226DD499E007B0AD3 /* MainView.swift */,
+				FB5D54542721E51800DCF96F /* logManager.swift */,
 				5A7D012A26E84F0900ECCB72 /* NotificationView.swift */,
 				5A9F12F826DF390E0055ED81 /* HomeView.swift */,
 				5ACB0FF426E052DB007F4622 /* ExpositionsView.swift */,
@@ -303,6 +306,7 @@
 				ABFD223527134DE200A07529 /* InfoMarcoView.swift in Sources */,
 				5A703CF02720CDE2007F0392 /* ReservaViewModel.swift in Sources */,
 				C5778687270FA3D80007CEB3 /* MarColection.swift in Sources */,
+				FB5D54552721E51800DCF96F /* logManager.swift in Sources */,
 				C5CE7569270E8B2F00B53F01 /* ImagesCarousel.swift in Sources */,
 				5A27CE15270A6CA6009E6A8B /* LoginView.swift in Sources */,
 				FBA66A0E26E135B50020CC24 /* NavAppereanceModifier.swift in Sources */,
