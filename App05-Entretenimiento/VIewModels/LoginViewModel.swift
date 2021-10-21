@@ -9,8 +9,11 @@ import Foundation
 
 class LoginViewModel : ObservableObject {
     
-    var username : String = UserDefaults.standard.string(forKey: "username") ?? ""
-    var password : String = UserDefaults.standard.string(forKey: "password") ?? ""
+    //var username : String = UserDefaults.standard.string(forKey: "username") ?? ""
+    //var password : String = UserDefaults.standard.string(forKey: "password") ?? ""
+    
+    var username : String = ""
+    var password : String = ""
     
     @Published var isLoggedin : Bool = false
     
@@ -49,6 +52,7 @@ class LoginViewModel : ObservableObject {
     func logout() {
         DispatchQueue.main.async {
             self.isLoggedin = false
+            self.password = ""
         }
     }
     

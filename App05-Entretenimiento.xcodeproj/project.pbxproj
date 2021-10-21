@@ -27,6 +27,7 @@
 		ABEA51A52717416800E84834 /* Reservacion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA51A42717416800E84834 /* Reservacion+CoreDataProperties.swift */; };
 		ABEA51A82717417100E84834 /* Reservacion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA51A72717417100E84834 /* Reservacion+CoreDataClass.swift */; };
 		ABFD223527134DE200A07529 /* InfoMarcoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFD223427134DE200A07529 /* InfoMarcoView.swift */; };
+		C5077D9F272212460033714C /* NotLoggedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5077D9E272212460033714C /* NotLoggedView.swift */; };
 		C55E528327149DA2006EF31B /* MarColectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55E528227149DA2006EF31B /* MarColectionModel.swift */; };
 		C55E52862714A60E006EF31B /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55E52852714A60E006EF31B /* SheetView.swift */; };
 		C5778687270FA3D80007CEB3 /* MarColection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5778686270FA3D80007CEB3 /* MarColection.swift */; };
@@ -36,7 +37,6 @@
 		FB2AB9B326DD499E007B0AD3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2AB9B226DD499E007B0AD3 /* MainView.swift */; };
 		FB2AB9B526DD49A0007B0AD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB2AB9B426DD49A0007B0AD3 /* Assets.xcassets */; };
 		FB2AB9B826DD49A0007B0AD3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB2AB9B726DD49A0007B0AD3 /* Preview Assets.xcassets */; };
-		FB5D54552721E51800DCF96F /* logManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D54542721E51800DCF96F /* logManager.swift */; };
 		FBA66A0226E135480020CC24 /* Enumerators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA66A0126E135480020CC24 /* Enumerators.swift */; };
 		FBA66A0526E135540020CC24 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA66A0426E135540020CC24 /* Extensions.swift */; };
 		FBA66A0926E135600020CC24 /* Exposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA66A0726E135600020CC24 /* Exposition.swift */; };
@@ -69,6 +69,7 @@
 		ABEA51A42717416800E84834 /* Reservacion+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reservacion+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ABEA51A72717417100E84834 /* Reservacion+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reservacion+CoreDataClass.swift"; sourceTree = "<group>"; };
 		ABFD223427134DE200A07529 /* InfoMarcoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoMarcoView.swift; sourceTree = "<group>"; };
+		C5077D9E272212460033714C /* NotLoggedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotLoggedView.swift; sourceTree = "<group>"; };
 		C55E528227149DA2006EF31B /* MarColectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarColectionModel.swift; sourceTree = "<group>"; };
 		C55E52852714A60E006EF31B /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		C5778686270FA3D80007CEB3 /* MarColection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarColection.swift; sourceTree = "<group>"; };
@@ -80,7 +81,6 @@
 		FB2AB9B426DD49A0007B0AD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB2AB9B726DD49A0007B0AD3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FB2AB9B926DD49A0007B0AD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB5D54542721E51800DCF96F /* logManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logManager.swift; sourceTree = "<group>"; };
 		FBA66A0126E135480020CC24 /* Enumerators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enumerators.swift; sourceTree = "<group>"; };
 		FBA66A0426E135540020CC24 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FBA66A0726E135600020CC24 /* Exposition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exposition.swift; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				FB2AB9B226DD499E007B0AD3 /* MainView.swift */,
-				FB5D54542721E51800DCF96F /* logManager.swift */,
+				C5077D9E272212460033714C /* NotLoggedView.swift */,
 				5A7D012A26E84F0900ECCB72 /* NotificationView.swift */,
 				5A9F12F826DF390E0055ED81 /* HomeView.swift */,
 				5ACB0FF426E052DB007F4622 /* ExpositionsView.swift */,
@@ -306,13 +306,13 @@
 				ABFD223527134DE200A07529 /* InfoMarcoView.swift in Sources */,
 				5A703CF02720CDE2007F0392 /* ReservaViewModel.swift in Sources */,
 				C5778687270FA3D80007CEB3 /* MarColection.swift in Sources */,
-				FB5D54552721E51800DCF96F /* logManager.swift in Sources */,
 				C5CE7569270E8B2F00B53F01 /* ImagesCarousel.swift in Sources */,
 				5A27CE15270A6CA6009E6A8B /* LoginView.swift in Sources */,
 				FBA66A0E26E135B50020CC24 /* NavAppereanceModifier.swift in Sources */,
 				5A703CF32720CDF8007F0392 /* ReservaModel.swift in Sources */,
 				FBA66A1E26E140360020CC24 /* WebView.swift in Sources */,
 				FBA66A1726E13BB50020CC24 /* ExpositionDetailView.swift in Sources */,
+				C5077D9F272212460033714C /* NotLoggedView.swift in Sources */,
 				ABEA51A22717414800E84834 /* Persistence.swift in Sources */,
 				FB2AB9B126DD499E007B0AD3 /* App05_EntretenimientoApp.swift in Sources */,
 				FBA66A1426E1389A0020CC24 /* MediaRowView.swift in Sources */,

@@ -8,35 +8,43 @@
 import SwiftUI
 
 struct AccountView: View {
-    @Binding var nombre: String
     @EnvironmentObject var loginVM : LoginViewModel
     
     var body: some View {
-        VStack{
-            Image("Perfil")
-                .resizable()
-                .scaledToFit()
-                .clipShape(Circle())
-                .frame(maxWidth: 200)
-            
-            Text("\(nombre)")
-            
-            Form{
-                TextField("Nombre", text: $nombre)
-            }
-            Button(action: {
-                            loginVM.logout()
-                            
-                        }, label: {
-                            Text("Sing out")
-                        })
-        }
-            .navigationBarTitle("Account")
+        ZStack{
+            Color("ColorDeFondo")
+            VStack{
+                Image("LogoMarco")
+                    .resizable()
+                    .scaledToFit()
+                    .clipShape(Circle())
+                    .frame(width: 300, height: 300, alignment: .center)
+                Text("Bienvenido a Marco, " + "\(loginVM.username)")
+                    .fontWeight(.bold)
+                    .padding()
+                } // VStack
+            } // ZStack
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarItems(trailing: Button(action: {loginVM.logout()}, label: {
+            //Image(systemName: "figure.walk")
+              //  .foregroundColor(.white)
+            Text("Salir")
+                .foregroundColor(.white)
+        }))
+        
+        .navigationAppearance(backgroundColor: UIColor(Color("ColorRosa")), foregroundColor: .black)
+        .blendMode(.sourceAtop)
+        .toolbar(content: {
+            ToolbarItem(placement: .principal, content: {
+                Image("MarcoLogoBlanco").resizable()
+                    .frame(width: 150, height:100)
+            }) // ToolBarItem Content
+        }) // ToolBar Content
     }
 }
 
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountView(nombre: .constant("Usuario"))
+        AccountView()
     }
 }

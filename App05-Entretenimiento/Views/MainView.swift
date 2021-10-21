@@ -73,7 +73,12 @@ struct MainView: View {
                 .navigationAppearance(backgroundColor: UIColor(Color("ColorDeFondo")) , foregroundColor: .black, tintColor: .systemTeal, hideSeparator: true)
 
                 NavigationView{
-                    NotificationView()
+                    if(loginVM.isLoggedin){
+                        NotificationView()
+                    }
+                    else{
+                        NotLoggedView()
+                    }
                 }
                 .tabItem{
                     let menuText = Text("Notificaciones", comment: "Notificaciones")
@@ -99,7 +104,12 @@ struct MainView: View {
                 .tag(Tab.exposiciones)
             
                 NavigationView{
-                    ReservationView()
+                    if(loginVM.isLoggedin){
+                        ReservationView()
+                    }
+                    else{
+                        NotLoggedView()
+                    }
                 }
                     .tabItem{
                         let menuText = Text("Reservaciones", comment: "calendar")
@@ -113,11 +123,17 @@ struct MainView: View {
 
                 
                 NavigationView{
-                    logManager()
-                    //AccountView(nombre: $nombre)
+                    //logManager()
+                    if(!loginVM.isLoggedin){
+                        LoginView()
+                    }
+                    else{
+                        AccountView()
+                    }
                 }
+                    //AccountView(nombre: $nombre)
                 .tabItem{
-                    let menuText = Text("Account", comment: "Account")
+                    let menuText = Text("Perfil", comment: "Account")
                     Label{
                         menuText
                     } icon:{
