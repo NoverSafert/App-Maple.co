@@ -45,7 +45,7 @@ const addUser = async (username, password, usertype) => {
 
 const getUser = async(username) => {
     //const user = await User.findById(username);
-    const user = await UserModel.findOne({ username });
+    const user = await UserModel.findOne({ username: username });
     // const product = await ProductModel.findOne({_id = id});
     // const product = await ProductModel.findById(id).select("name brand");
     // const product = await ProductModel.findById(id, "name brand");
@@ -61,13 +61,11 @@ const getAllUsers = async() => {
 };
 
 const updateUser = async(username, password, usertype) => {
-
     try{
-        const user = await UserModel.findOne({ username });
+        const user = await UserModel.findOne({ username: username });
         user.password = password;
         user.usertype = usertype;
         await user.save()
-
         return user;
 
     }
@@ -79,7 +77,7 @@ const updateUser = async(username, password, usertype) => {
 
 const deleteUser = async(username) => {
     try{
-        await UserModel.findOneAndDelete({ username });
+        await UserModel.findOneAndDelete({ username: username });
         return true;
     }
     catch (err) {

@@ -1,9 +1,10 @@
 const reservationServices = require('../services/reservation');
+const { update } = require('./expositions');
 
 module.exports = {
     add: (req, res) => {
         const date = new Date(req.body.fecha)
-        const hour = new Date(req.body.hora)
+        const hour = req.body.hora
         const topic = req.body.titulo
         const username = req.body.usuario
         const people = req.body.canPer
@@ -35,11 +36,25 @@ module.exports = {
         }
     }, 
 
+    getAllAll: async (req, res) => {
+        const reservations = await reservationServices.getAllAll()
+        if(reservations){
+            res.status(200).json({
+                reservations
+            })
+        }
+        else{
+            res.status(404).json({
+                message : "There's no reservations"
+            })
+        }
+    },
+
     get: async (req, res) => {
         // username, day, hour
         const username = req.body.usuario
         const day = new Date(req.body.fecha)
-        const hour = new Date(req.body.hora)
+        const hour = req.body.hora // Corregido
         const reservation = await reservationServices.get(username, day, hour)
         if(reservation){
             res.status(200).json({
@@ -56,7 +71,7 @@ module.exports = {
     deleteR: async (req, res) => {
         const username = req.body.usuario
         const day = new Date(req.body.fecha)
-        const hour = new Date(req.body.hora)
+        const hour = req.body.hora
         const result = await reservationServices.deleteR(username, day, hour)
             .then(ok =>{
                 res.status(201).json({
@@ -68,5 +83,24 @@ module.exports = {
                     message: 'Cannot delete this reservation because: ' + e
                 })
             });
+    },
+
+    update: async(req, res) =>{
+        const username = req.body.usuario
+        const day = new Date(req.body.fecha)
+        const hour = req.body.hora
+        const topic = req.body.titulo
+        const result = await reservationServices.update(username, day, hour, topic)
+            .then(ok =>{
+                res.status(201).json({
+                    message: 'Reservation updated'
+                })
+            })
+            .catch(e =>{
+                res.status(404).json({
+                    message: 'Cannot update this reservation because: ' + e
+                })
+            });
     }
+
 };

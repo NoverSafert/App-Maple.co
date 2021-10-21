@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 
 // Puerto en el que corre la app
-const port = 80;
+const port = 10124;
 
 // Rutas
 app.use(require('./routes/routes'))

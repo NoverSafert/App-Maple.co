@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "da59302d-2b08-41ee-9f64-04aab6797d6f",
+		"name": "Reservaciones",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha\": \"2021-10-25T12:30:00\",\r\n    \"hora\": \"2021-10-25T12:30:00\",\r\n    \"titulo\": \"Reservacion\",\r\n    \"usuario\": \"Pedro\",\r\n    \"canPer\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:80/reservations/add",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"reservations",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Pedro\",\r\n    \"day\": \"2021-10-25T12:30:00\",\r\n    \"hour\": \"2021-10-25T12:30:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:80/reservations/get",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"reservations",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:80/reservations/getAll/Pedro",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"reservations",
+						"getAll",
+						"Pedro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Pedro\",\r\n    \"day\": \"2021-10-25T12:30:00\",\r\n    \"hour\": \"2021-10-25T12:30:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:80/reservations/deleteR",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"reservations",
+						"deleteR"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

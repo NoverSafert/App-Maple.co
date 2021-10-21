@@ -35,7 +35,6 @@ module.exports = {
 
     get: async (req, res) => {
         const name = req.params.exposition;
-        console.log("Obra buscada: " + name);
         const exposition = await expositionsServices.get(name)
         // console.log(exposition.colection.sizes)
         if(exposition){
@@ -53,7 +52,6 @@ module.exports = {
     update: async (req, res) => {
         // Notice our app declared app.use(express.json()); for doing this
         const name = req.params.exposition;
-
         const {images ,descrption ,hasVideo ,autor ,video ,museography ,hasTour ,rooms , tour ,techniques ,pieces} = req.body;
         const updateExposition = await expositionsServices.update(name, images ,descrption ,hasVideo ,autor ,video ,museography ,hasTour ,rooms , tour ,techniques ,pieces)
             .then(ok =>{
@@ -66,7 +64,6 @@ module.exports = {
                     message : 'Cannot update the exposition, ' + e
                 })
             });
-
     },
 
     deleteE: async (req, res) => {

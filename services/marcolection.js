@@ -27,7 +27,7 @@ const getAll = async() => {
 
 const update = async(name ,images, autor, sizes, technique, year) => {
     try{
-        const exposition = await ExpositionModel.findOne({ name });
+        const exposition = await MarColectionModel.findOne({ name: name });
         exposition.images = images;
         exposition.autor = autor;
         exposition.sizes = sizes;
@@ -44,7 +44,7 @@ const update = async(name ,images, autor, sizes, technique, year) => {
 
 const deleteE = async(exposition) => {
     try{
-        await ExpositionModel.findOneAndDelete({ exposition });
+        await MarColectionModel.findOneAndDelete({ exposition });
         return true;
     }
     catch (err) {

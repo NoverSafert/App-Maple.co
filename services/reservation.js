@@ -22,7 +22,7 @@ const get = async(username, day, hour) => {
 };
 
 const getAll = async(username) => {
-    const search = await ReservationModel.find({usuario: username}); // Tal vez ????????
+    const search = await ReservationModel.find({usuario: username});
     return search;
 };
 
@@ -39,10 +39,33 @@ const deleteR = async(username, day, hour) => {
     }
 };
 
+const getAllAll = async() =>{
+    const search = await ReservationModel.find({});
+    return search;
+}
+
+const update = async(username, day, hour, topic) =>{
+    try{
+        const newD = {
+            titulo: topic
+        }
+
+        await ReservationModel.findOneAndUpdate({fecha: day, 
+                                                hora: hour, 
+                                                usuario: username
+                                                }, newD); // Tal vez ????????
+        return true;
+    }
+    catch (err) {
+        return err;
+    }
+}
 
 module.exports = {
     add,
     get, 
     getAll,
-    deleteR
+    deleteR, 
+    getAllAll, 
+    update
 };

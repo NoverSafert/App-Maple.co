@@ -37,7 +37,7 @@ const ExpositionSchema = new Schema({
     },
     video: {
         type: String, 
-        required: false, 
+        required: true, 
         unique: false, 
         trim: true
     }, 
@@ -61,7 +61,7 @@ const ExpositionSchema = new Schema({
     }, 
     tour: {
         type: String, 
-        required: false, 
+        required: true, 
         unique: false, 
         trim: true
     }, 
@@ -77,8 +77,6 @@ const ExpositionSchema = new Schema({
         unique: false, 
         trim: true
     }
-}, {
-    timestamps: true
 });
  
 ExpositionSchema.pre('save', async function (next) {

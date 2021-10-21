@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const ExpositionModel = require('../models/expositions');
-const MarColectionModel = require('../models/marcolection');
 // const jwt = require("jsonwebtoken");
 
 // Now this service is providing whatever is needed to interact with the database but at the same time
@@ -23,11 +22,12 @@ const add = async (name ,images ,descrption ,hasVideo ,autor ,video ,museography
     });
     // All validation, checks, further tasks (sending emails, etc.) must happen here.
     await expositionModel.save();
+    console.log("saved")
     return expositionModel;
 };
 
 const get = async(exposition) => {
-    const search = await ExpositionModel.findOne({exposition});
+    const search = await ExpositionModel.findOne({name:exposition});
     return search;        
 };
 
@@ -38,27 +38,25 @@ const getAll = async() => {
 
 const update = async(name ,images ,descrption ,hasVideo ,autor ,video ,museography ,hasTour ,rooms , tour ,techniques ,pieces) => {
     try{
-        console.log("obra a actualizar: " + name);
-        const exposition = await ExpositionModel.findOne({ name });
-        // console.log("Termino de crear el modelo de la coleccion, el cual es: " + marColectionModel)
-        exposition.images = images;
-        exposition.descrption = descrption;
-        exposition.hasVideo = hasVideo;
-        exposition.autor = autor;
-        exposition.video = video;
-        exposition.museography = museography;
-        exposition.hasTour = hasTour;
-        exposition.rooms = rooms;
-        exposition.tour = tour;
-        exposition.techniques = techniques;
-        exposition.pieces = pieces;
-        await exposition.save()
-        return exposition;
+        const newD = {images : images,
+            descrption : descrption,
+            hasVideo : hasVideo,
+            autor : autor,
+            video : video,
+            museography : museography,
+            hasTour : hasTour,
+            rooms : rooms,
+            tour : tour,
+            techniques : techniques,
+            pieces : pieces
+        }
+        const expo = await ExpositionModel.findOneAndUpdate({ name: name }, newD);
+        await expo.save()
+        return expo;
     }
-    catch (err) {
+    catch(err) {
         return false;
     }
-
 };
 
 const deleteE = async(exposition) => {

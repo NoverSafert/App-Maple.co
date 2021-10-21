@@ -9,7 +9,7 @@ const ReservationSchema = new Schema({
         trim: true
     },
     hora: { 
-        type: Date,//("<THH:MM:ss>"), 
+        type: String,//("<THH:MM:ss>"), 
         required: true, 
         unique: false, 
         trim: true
