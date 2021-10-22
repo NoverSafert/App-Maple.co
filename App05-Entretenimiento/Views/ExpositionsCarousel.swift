@@ -13,6 +13,7 @@ struct ExpositionsCarousel: View {
     @EnvironmentObject private var MarColect : MarColectionModel
     @State var showPopUp: Bool = false
     @State var selected = MarColection.defaultMedia //Exposition.defaultMedia
+    //@State private var selected : MarColection = MarColectionModel.//MarColectionModel.init().expositions[0]
 
     
     private func getScale(proxy: GeometryProxy) -> CGFloat {

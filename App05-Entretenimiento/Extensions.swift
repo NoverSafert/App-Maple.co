@@ -27,6 +27,13 @@ extension Exposition{
 }
     
 extension MarColection{
-    public static var defaultMedia = MarColection(id: "1", name: "a", images: ["a", "a"], autor: "a", sizes: "a", technique: "a", year: "0")
+    public static var defaultMedia = MarColection(id: "1",
+                                                name: "Depresion",
+                                                 images: ["expo1", "NahumZenil"],
+                                                 autor: "Nahum B. Zenil",
+                                                 sizes: "(49.5 x 70 cm)",
+                                                 technique: "Óleo sobre madera",
+                                                 year: "1994"
+                                                             )
 }
 
