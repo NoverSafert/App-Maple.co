@@ -42,7 +42,7 @@ struct ExpositionsCarousel: View {
                                     }, label: {
                                         VStack(spacing: 1){
                                             //Image(expo.images[0])
-                                            AnimatedImage(url: URL(string: "http://100.24.228.237:10124/colectMarco/" + expo.images[0] + ".jpg"))
+                                            AnimatedImage(url: URL(string: "http://100.24.228.237:10124/colectMarco/" + expo.images[0] + ".jpeg"))
                                                 .resizable()
                                                 .scaledToFit()
                                                 .frame(width: 280) // 150
