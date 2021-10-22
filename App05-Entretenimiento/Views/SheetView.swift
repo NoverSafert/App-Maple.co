@@ -33,7 +33,7 @@ struct SheetView: View {
                         .multilineTextAlignment(.leading)
                         .padding()
                     //Image(expo.images[1])
-                    AnimatedImage(url: URL(string: "http://100.24.228.237:10124/colectMarco/" + expo.images[1] + ".jpg"))
+                    AnimatedImage(url: URL(string: "http://100.24.228.237:10124/colectMarco/" + expo.images[1] + ".jpeg"))
                         .resizable()
                         .scaledToFit()
                         .frame(width: 280) // 150
