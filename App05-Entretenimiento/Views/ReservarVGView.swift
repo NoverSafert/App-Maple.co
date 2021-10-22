@@ -10,12 +10,12 @@ import SwiftUI
 struct ReservarVGView: View {
     
     @EnvironmentObject var reserva : ReservaViewModel
+    @EnvironmentObject var loginVM : LoginViewModel
     
     @Environment(\.managedObjectContext) var viewContext
     @Environment(\.presentationMode) var presentationMode
     
     @State var tituloReservacion = ""
-    @State var usuario = ""
     @State var cantPer = 0
     @State var fecha = Date()
     @State var hora : String = "10:00 AM"
@@ -27,7 +27,7 @@ struct ReservarVGView: View {
                     Form{
                         Section(header: Text("Detalle Reserva")){
                             TextField("Titulo", text: $tituloReservacion)
-                            TextField("Usuario", text: $usuario)
+                            TextField("Usuario", text: $loginVM.username)
                             Picker("Number de Personas", selection: $cantPer){
                                 ForEach(2 ..< 16){
                                     Text("\($0)")
@@ -49,7 +49,7 @@ struct ReservarVGView: View {
                         }//Boton2
                         
                         Button(action: {
-                            reserva.addReserva(titulo: tituloReservacion, username: usuario, fecha: fecha, hora: hora, cantPer: cantPer)
+                            reserva.addReserva(titulo: tituloReservacion, username: loginVM.username, fecha: fecha, hora: hora, cantPer: cantPer)
                             self.presentationMode.wrappedValue.dismiss()
                         }){
                             Text("Guardar Reserva")

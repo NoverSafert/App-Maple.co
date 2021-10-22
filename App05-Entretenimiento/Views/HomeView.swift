@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var marColect : MarColectionModel
     @State private var showDetails = false
     @State var isPresenting = false
     var body: some View{
@@ -19,7 +20,7 @@ struct HomeView: View {
                     .font(.system(size: 30))
                     .padding()
                     .multilineTextAlignment(.center)
-                ExpositionsCarousel(selected: MarColection.defaultMedia)
+                ExpositionsCarousel()
             } // VStack
             .padding()
             Text("Acerca de nosotros")

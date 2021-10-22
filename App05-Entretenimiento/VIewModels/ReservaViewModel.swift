@@ -12,7 +12,7 @@ class ReservaViewModel : ObservableObject {
     @Published var arrReservas = [ReservasModel]()
     
     init(){
-        getReservas()
+        //getReservas()
     }
     
     func addReserva(titulo: String, username : String, fecha: Date, hora: String, cantPer: Int)  {
@@ -30,15 +30,19 @@ class ReservaViewModel : ObservableObject {
         
     }
     
-    func getReservas() {
+    func getReservas(completion: @escaping ([ReservasModel]) -> ()) {
             
-            //let username = UserDefaults.standard.string(forKey: "username") ?? " "
-            let username = "Pedro"
+            let username = UserDefaults.standard.string(forKey: "username") ?? " "
+            //let username = "Pedro"
             Webservice().getReservas(username: username) { result in
                 switch result {
                     case .success(let reservas):
                             print("Obtuvo las reservas")
                         self.arrReservas = reservas.reservations
+                        DispatchQueue.main.async {
+                            completion(reservas.reservations) //nos aseguramos de estar en el thread principal
+                        }
+
                             
                     case .failure(let error):
                         print(error)

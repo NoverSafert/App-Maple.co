@@ -173,10 +173,10 @@ struct InfoMarcoFinalView: View {
     }
 }
 
-struct InfoMarcoView_Previews: PreviewProvider {
-    static var previews: some View {
-        ExpositionsCarousel()
-            .environmentObject(MarColectionModel())
-    }
-}
+//struct InfoMarcoView_Previews: PreviewProvider {
+//    static var previews: some View {
+        //ExpositionsCarousel()
+         //   .environmentObject(MarColectionModel())
+    //}
+//}
 
